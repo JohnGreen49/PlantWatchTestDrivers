@@ -1,0 +1,14 @@
+1
+MyDatabase
+TestDB
+Driver=SQL Server;Server=localhost\SQLEXPRESS;Database=PWBase;Trusted_Connection=yes
+2000
+ODBC
+SELECT PartType, Description from Parts
+10
+No
+no
+
+
+
+

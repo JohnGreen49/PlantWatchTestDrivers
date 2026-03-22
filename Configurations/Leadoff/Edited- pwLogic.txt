@@ -1,0 +1,1748 @@
+Scanner Logic
+
+ABCStation
+Scanner Port
+False
+
+
+index =  1 1
+Cell 0 1
+
+NoOperation
+index =  1 2
+Cell 0 2
+Rx Scanner Data
+Math
+Device
+
+
+
+Constant
+
+SetVariableToValue
+Scanner Data
+
+
+
+
+index =  1 3
+Cell 0 3
+
+Math
+Constant
+Not Verified
+
+
+Constant
+
+SetVariableToValue
+VerifiedScannedPartNumber
+
+
+
+
+index =  1 4
+Cell 0 4
+
+If
+Variable
+Scanner Data
+=
+
+Combo1
+Variable
+SekectedPartNumber
+index =  1 5
+Cell 0 5
+
+Math
+Constant
+Part Number Verified
+
+
+Constant
+
+SetVariableToValue
+VerifiedScannedPartNumber
+
+
+
+
+index =  1 6
+Cell 0 6
+
+Math
+Variable
+TimeStamp
+
+
+Constant
+
+SetVariableToValue
+UID
+
+
+
+
+index =  1 7
+Cell 0 7
+
+UnUsed
+index =  1 8
+Cell 0 8
+
+Math
+Variable
+Scanner Data
+
+
+Constant
+
+AddStringToBegining
+MarkDataString
+
+
+
+
+index =  1 9
+Cell 0 9
+
+Math
+Variable
+UID
+
+
+Constant
+
+AddStringToEnd
+MarkDataString
+
+
+
+
+index =  1 10
+Cell 0 10
+
+
+index =  1 11
+Cell 1 1
+
+Math
+Constant
+LawnGreen
+
+
+Constant
+
+SetVariableToValue
+MarkPartButtonBGColor
+
+
+
+
+index =  1 12
+Cell 1 2
+
+Math
+Constant
+Press Load Mark Data Button
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+index =  1 13
+Cell 1 3
+
+
+index =  1 14
+Cell 1 4
+
+
+index =  1 15
+Cell 1 5
+
+
+index =  1 16
+Cell 1 6
+
+
+index =  1 17
+Cell 1 7
+
+
+index =  1 18
+Cell 1 8
+
+
+index =  1 19
+Cell 1 9
+
+
+index =  1 20
+
+
+
+index = 1 21
+
+
+
+index =  1 22
+
+
+
+index =  1 23
+
+
+
+index =  1 24
+
+
+
+index =  1 25
+
+
+
+index =  1 26
+
+
+
+index =  1 27
+
+
+
+index =  1 28
+
+
+
+index =  1 29
+
+
+
+index =  1 30
+
+
+
+InitializationThreadLogix
+
+ABCStation
+InitializationThread
+False
+
+
+index =  2 1
+
+
+NoOperation
+index =  2 2
+Cell 0 2
+
+If
+Variable
+Initialize
+=
+
+Combo1
+Constant
+0
+index =  2 3
+Cell 0 3
+
+Math
+Constant
+1
+
+
+Constant
+
+SetVariableToValue
+Initialize
+
+
+
+
+index =  2 4
+Cell 0 4
+
+ActionReadFromFile
+Array
+OperatorArray
+Constant
+1
+AllRecords
+
+Constant
+C:\PlantWatchConfig\SolutionData\
+Constant
+Operators
+Constant
+txt
+index =  2 5
+Cell 0 5
+
+ActionReadFromFile
+Array
+PartNumberArray
+Constant
+1
+Constant
+6
+Constant
+C:\PlantWatchConfig\SolutionData\
+Constant
+PartNumbers
+Constant
+txt
+index =  2 6
+Cell 0 6
+
+ActionReadFromFile
+Array
+DefectArray
+Constant
+1
+Constant
+5
+Constant
+C:\PlantWatchConfig\SolutionData\
+Constant
+Defects
+Constant
+txt
+index =  2 7
+Cell 0 7
+
+Math
+Constant
+Select an Operator
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+index =  2 8
+Cell 0 8
+
+Math
+Constant
+Grey
+
+
+Constant
+
+SetVariableToValue
+MarkPartButtonBGColor
+
+
+
+
+index =  2 9
+Cell 0 9
+
+Math
+Constant
+Grey
+
+
+Constant
+
+SetVariableToValue
+PrintLabelButtonBGColor
+
+
+
+
+index =  2 10
+Cell 1 0
+
+UnUsed
+index =  2 11
+Cell 1 1
+
+Math
+Constant
+0
+
+
+Constant
+
+SetVariableToValue
+GoodPartCount
+
+
+
+
+index =  2 12
+Cell 1 2
+
+Math
+Constant
+0
+
+
+Constant
+
+SetVariableToValue
+BadPartCount
+
+
+
+
+index =  2 13
+Cell 1 3
+
+
+index =  2 14
+Cell 1 4
+
+
+index =  2 15
+Cell 1 5
+
+
+index =  2 16
+Cell 1 6
+
+
+index =  2 17
+Cell 1 7
+
+
+index =  2 18
+Cell 1 8
+
+
+index =  2 19
+Cell 1 9
+
+
+index =  2 20
+Cell 1 10
+
+
+index =  2 21
+
+
+
+index =  2 22
+
+
+
+index =  2 23
+
+
+
+index =  2 24
+
+
+
+index =  2 25
+
+
+
+index =  2 26
+
+
+
+index =  2 27
+
+
+
+index =  2 28
+
+
+
+index =  2 29
+
+
+
+index =  2 30
+
+
+
+FixedMountReaderLogic
+
+ABCStation
+FixedMountREader
+False
+
+
+index =  3 1
+Cell 0 1
+
+Math
+Device
+
+
+
+Constant
+
+SetVariableToValue
+Reader Data
+
+
+
+
+index =  3 2
+Cell 0 2
+
+Math
+Constant
+Fixed Mount Reader = 
+
+
+Variable
+Reader Data
+Add2StringsToEnd
+Status
+
+
+
+
+index =  3 3
+Cell 0 3
+
+If
+Variable
+Garbage
+=
+
+Combo1
+Variable
+Garbage
+index =  3 4
+Cell 0 4
+
+Math
+Variable
+GoodPartCount
+
+
+Constant
+1
+AddAsNumbers
+GoodPartCount
+
+
+
+
+index =  3 5
+
+
+
+index =  3 6
+
+
+
+index =  3 7
+
+
+
+index =  3 8
+
+
+
+index =  3 9
+
+
+
+index =  3 10
+
+
+
+index =  3 11
+
+
+
+index =  3 12
+
+
+
+index =  3 13
+
+
+
+index =  3 14
+
+
+
+index =  3 15
+
+
+
+index =  3 16
+
+
+
+index =  3 17
+
+
+
+index =  3 18
+
+
+
+index =  3 19
+
+
+
+index =  3 20
+
+
+
+index =  3 21
+
+
+
+index =  3 22
+
+
+
+index =  3 23
+
+
+
+index =  3 24
+
+
+
+index =  3 25
+
+
+
+index =  3 26
+
+
+
+index =  3 27
+
+
+
+index =  3 28
+
+
+
+index =  3 29
+
+
+
+index =  3 30
+
+
+
+MarkButtonLogicChart
+
+ABCStation
+MarkButtonLogic
+False
+
+
+index =  4 1
+Cell 0 1
+
+If
+Constant
+PartNumberVerified
+=
+
+Combo1
+Variable
+VerifiedScannedPartNumber
+index =  4 2
+Cell 0 2
+
+Math
+Constant
+Loading Marking Data.....
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+index =  4 3
+Cell 0 3
+
+ActionWriteToDevice
+Constant
+
+Variable
+MarkDataString
+Constant
+
+No
+Laser
+index =  4 4
+Cell 0 4
+
+Math
+Constant
+Marking Part - 
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+index =  4 5
+Cell 0 5
+
+Math
+Variable
+MarkDataString
+
+
+Constant
+
+AddStringToEnd
+Status
+
+
+
+
+index =  4 6
+Cell 0 6
+
+Math
+Constant
+Grey
+
+
+Constant
+
+SetVariableToValue
+MarkPartButtonBGColor
+
+
+
+
+index =  4 7
+
+
+
+index =  4 8
+
+
+
+index =  4 9
+
+
+
+index =  4 10
+
+
+
+index =  4 11
+
+
+
+index =  4 12
+
+
+
+index =  4 13
+
+
+
+index =  4 14
+
+
+
+index =  4 15
+
+
+
+index =  4 16
+
+
+
+index =  4 17
+
+
+
+index =  4 18
+
+
+
+index =  4 19
+
+
+
+index =  4 20
+
+
+
+index =  4 21
+
+
+
+index =  4 22
+
+
+
+index =  4 23
+
+
+
+index =  4 24
+
+
+
+index =  4 25
+
+
+
+index =  4 26
+
+
+
+index =  4 27
+
+
+
+index =  4 28
+
+
+
+index =  4 29
+
+
+
+index =  4 30
+
+
+
+RxLaserLogic
+
+ABCStation
+Laser
+False
+
+
+index =  5 1
+Cell 0 1
+
+NoOperation
+index =  5 2
+Cell 0 2
+
+If
+Device
+
+=
+
+Combo1
+Constant
+TCP:[
+index =  5 3
+Cell 0 3
+
+Math
+Constant
+ 
+
+
+Constant
+
+SetVariableToValue
+Scanner Data
+
+
+
+
+index =  5 4
+Cell 0 4
+
+Math
+Constant
+Completed Part Marking...
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+index =  5 5
+Cell 0 5
+
+Math
+Constant
+Not Verified
+
+
+Constant
+
+SetVariableToValue
+VerifiedScannedPartNumber
+
+
+
+
+index =  5 6
+Cell 0 6
+
+Math
+Constant
+Grey
+
+
+Constant
+
+SetVariableToValue
+MarkPartButtonBGColor
+
+
+
+
+index =  5 7
+Cell 0 7
+
+Math
+Constant
+Lawn Green
+
+
+Constant
+
+SetVariableToValue
+PrintLabelButtonBGColor
+
+
+
+
+index =  5 8
+Cell 0 8
+
+Math
+Constant
+ 
+
+
+Constant
+
+SetVariableToValue
+MarkDataString
+
+
+
+
+index =  5 9
+Cell 0 9
+
+Math
+Variable
+GoodPartCount
+
+
+Constant
+1
+AddAsNumbers
+GoodPartCount
+
+
+
+
+index =  5 10
+
+
+
+index =  5 11
+
+
+
+index =  5 12
+
+
+
+index =  5 13
+
+
+
+index =  5 14
+
+
+
+index =  5 15
+
+
+
+index =  5 16
+
+
+
+index =  5 17
+
+
+
+index =  5 18
+
+
+
+index =  5 19
+
+
+
+index =  5 20
+
+
+
+index =  5 21
+
+
+
+index =  5 22
+
+
+
+index =  5 23
+
+
+
+index =  5 24
+
+
+
+index =  5 25
+
+
+
+index =  5 26
+
+
+
+index =  5 27
+
+
+
+index =  5 28
+
+
+
+index =  5 29
+
+
+
+index =  5 30
+
+
+
+MarkPartButtonLogicChart
+
+ABCStation
+GuiLogicChartHolder
+False
+
+
+index =  6 1
+Cell 0 1
+
+Split
+index =  6 2
+Cell 0 2
+
+If
+Device
+
+=
+
+Combo1
+Constant
+TCP:[
+index =  6 3
+Cell 0 3
+
+Math
+Constant
+Grey
+
+
+Constant
+
+SetVariableToValue
+MarkPartButtonBGColor
+
+
+
+
+index =  6 4
+Cell 0 4
+
+ActionWriteToDevice
+Constant
+
+Variable
+MarkDataString
+Constant
+
+No
+Laser
+index =  6 5
+
+
+
+index =  6 6
+
+
+
+index =  6 7
+
+
+
+index =  6 8
+
+
+
+index =  6 9
+
+
+
+index =  6 10
+
+
+
+index =  6 11
+
+
+
+index =  6 12
+
+
+
+index =  6 13
+
+
+
+index =  6 14
+
+
+
+index =  6 15
+
+
+
+index =  6 16
+
+
+
+index =  6 17
+
+
+
+index =  6 18
+
+
+
+index =  6 19
+
+
+
+index =  6 20
+
+
+
+index =  6 21
+
+
+
+index =  6 22
+
+
+
+index =  6 23
+
+
+
+index =  6 24
+
+
+
+index =  6 25
+
+
+
+index =  6 26
+
+
+
+index =  6 27
+
+
+
+index =  6 28
+
+
+
+index =  6 29
+
+
+
+index =  6 30
+
+
+
+PrintLabelButtonLogicChart
+
+ABCStation
+GuiLogicChartHolder
+False
+
+
+index =  7 1
+Cell 0 1
+
+Split
+index =  7 2
+
+
+
+index =  7 3
+
+
+
+index =  7 4
+
+
+
+index =  7 5
+
+
+
+index =  7 6
+
+
+
+index =  7 7
+
+
+
+index =  7 8
+
+
+
+index =  7 9
+
+
+
+index =  7 10
+
+
+
+index =  7 11
+
+
+
+index =  7 12
+
+
+
+index =  7 13
+
+
+
+index =  7 14
+
+
+
+index =  7 15
+
+
+
+index =  7 16
+
+
+
+index =  7 17
+
+
+
+index =  7 18
+
+
+
+index =  7 19
+
+
+
+index =  7 20
+
+
+
+index =  7 21
+
+
+
+index =  7 22
+
+
+
+index =  7 23
+
+
+
+index =  7 24
+
+
+
+index =  7 25
+
+
+
+index =  7 26
+
+
+
+index =  7 27
+
+
+
+index =  7 28
+
+
+
+index =  7 29
+
+
+
+index =  7 30
+
+
+
+RecordDefectButtonLogicChart
+
+ABCStation
+GuiLogicChartHolder
+False
+
+
+index =  8 1
+Cell 0 1
+
+Split
+index =  8 2
+Cell 0 2
+
+
+index =  8 3
+Cell 0 3
+
+
+index =  8 4
+Cell 0 4
+
+
+index =  8 5
+Cell 0 5
+
+
+index =  8 6
+Cell 0 6
+
+
+index =  8 7
+Cell 0 7
+
+
+index =  8 8
+Cell 0 8
+
+
+index =  8 9
+Cell 0 9
+
+
+index =  8 10
+Cell 0 10
+
+
+index =  8 11
+Cell 1 1
+
+
+index =  8 12
+Cell 1 2
+
+
+index =  8 13
+Cell 1 3
+
+
+index =  8 14
+Cell 1 4
+
+
+index =  8 15
+Cell 1 5
+
+
+index =  8 16
+Cell 1 6
+
+
+index =  8 17
+Cell 1 7
+
+
+index =  8 18
+Cell 1 8
+
+
+index =  8 19
+Cell 1 9
+
+
+index =  8 20
+Cell 1 10
+
+
+index =  8 21
+Cell 2 1
+
+
+index =  8 22
+Cell 2 2
+
+
+index =  8 23
+Cell 2 3
+
+
+index =  8 24
+Cell 2 4
+
+
+index =  8 25
+Cell 2 5
+
+
+index =  8 26
+Cell 2 6
+
+
+index =  8 27
+Cell 2 7
+
+
+index =  8 28
+Cell 2 8
+
+
+index =  8 29
+Cell 2 9
+
+
+index =  8 30
+Cell 2 10
+
+
+ZebraBarCodePrinterLogicChart
+
+ABCStation
+ZebraPrinter
+False
+
+
+index =  9 1
+Cell 0 1
+
+PrintBarcode
+Zebra G120 Barcode Printer
+ 3
+
+
+
+
+Constant
+
+
+
+
+
+
+
+
+
+
+
+
+
+index =  9 2
+
+
+
+index =  9 3
+
+
+
+index =  9 4
+
+
+
+index =  9 5
+
+
+
+index =  9 6
+
+
+
+index =  9 7
+
+
+
+index =  9 8
+
+
+
+index =  9 9
+
+
+
+index =  9 10
+
+
+
+index =  9 11
+
+
+
+index =  9 12
+
+
+
+index =  9 13
+
+
+
+index =  9 14
+
+
+
+index =  9 15
+
+
+
+index =  9 16
+
+
+
+index =  9 17
+
+
+
+index =  9 18
+
+
+
+index =  9 19
+
+
+
+index =  9 20
+
+
+
+index =  9 21
+
+
+
+index =  9 22
+
+
+
+index =  9 23
+
+
+
+index =  9 24
+
+
+
+index =  9 25
+
+
+
+index =  9 26
+
+
+
+index =  9 27
+
+
+
+index =  9 28
+
+
+
+index =  9 29
+
+
+
+index =  9 30
+
+
+
+LogicChart10
+
+ABCStation
+GuiLogicChartHolder
+False
+
+
+index =  10 1
+Cell 0 1
+
+PrintBarcode
+Zebra G120 Barcode Printer
+ 1
+Name
+Data Matrix
+50
+50
+Variable
+JUstPrintData
+
+
+
+
+
+
+
+
+index =  10 2
+
+
+
+index =  10 3
+
+
+
+index =  10 4
+
+
+
+index =  10 5
+
+
+
+index =  10 6
+
+
+
+index =  10 7
+
+
+
+index =  10 8
+
+
+
+index =  10 9
+
+
+
+index =  10 10
+
+
+
+index =  10 11
+
+
+
+index =  10 12
+
+
+
+index =  10 13
+
+
+
+index =  10 14
+
+
+
+index =  10 15
+
+
+
+index =  10 16
+
+
+
+index =  10 17
+
+
+
+index =  10 18
+
+
+
+index =  10 19
+
+
+
+index =  10 20
+
+
+
+index =  10 21
+
+
+
+index =  10 22
+
+
+
+index =  10 23
+
+
+
+index =  10 24
+
+
+
+index =  10 25
+
+
+
+index =  10 26
+
+
+
+index =  10 27
+
+
+
+index =  10 28
+
+
+
+index =  10 29
+
+
+
+index =  10 30
+
+
+

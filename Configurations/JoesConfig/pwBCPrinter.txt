@@ -1,0 +1,12 @@
+1
+Zebra G120 Barcode Printer
+
+COMPort
+ 4
+9600
+8
+[N]one
+1
+
+
+No

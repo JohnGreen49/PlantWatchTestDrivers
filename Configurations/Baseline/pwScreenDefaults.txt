@@ -1,0 +1,16 @@
+1300
+800
+
+Black
+White
+Black
+White
+Helvetica
+8
+normal
+Helvetica
+12
+normal
+Helvetica
+24
+normal

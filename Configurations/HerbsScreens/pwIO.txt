@@ -1,0 +1,14 @@
+1
+no
+1
+192.168.1.111
+100
+2000
+8 Dig Ins followed by 8 Dig Outs
+Unused
+Unused
+Unused
+Unused
+Unused
+Unused
+Unused

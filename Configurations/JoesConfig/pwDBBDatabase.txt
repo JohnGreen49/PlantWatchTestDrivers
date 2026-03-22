@@ -1,0 +1,14 @@
+1
+MyDatabase
+
+Data Source=localhost\; initial Catalog=PWBase; Trusted_Connection=True;
+2000
+NativeSQL
+
+10
+No
+no
+
+
+
+

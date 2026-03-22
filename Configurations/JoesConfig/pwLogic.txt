@@ -1,0 +1,2652 @@
+FixedMountReaderLogic
+
+ABCStation
+FixedMountREader
+n
+
+
+
+Cell 0 1
+
+Math
+Device
+
+
+
+Constant
+
+SetVariableToValue
+Reader Data
+
+
+
+
+
+Cell 0 2
+
+Math
+Constant
+Fixed Mount Reader = 
+
+
+Variable
+Reader Data
+Add2StringsToEnd
+Status
+
+
+
+
+
+Cell 0 3
+
+If
+Variable
+Garbage
+=
+
+Combo1
+Variable
+Garbage
+
+Cell 0 4
+
+Math
+Variable
+GoodPartCount
+
+
+Constant
+1
+AddAsNumbers
+GoodPartCount
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+InitializationThreadLogix
+
+ABCStation
+InitializationThread
+n
+
+
+
+Cell 0 1
+
+If
+Variable
+Initialize
+=
+
+Combo1
+Constant
+0
+
+Cell 0 2
+
+Math
+Constant
+1
+
+
+Constant
+
+SetVariableToValue
+Initialize
+
+
+
+
+
+Cell 0 3
+
+ActionReadFromFile
+Array
+OperatorArray
+Constant
+1
+AllRecords
+
+Constant
+C:\PlantWatchConfig\SolutionData\Config Files\
+Constant
+Operators
+Constant
+txt
+
+Cell 0 4
+
+ActionReadFromFile
+Array
+PartNumberArray
+Constant
+1
+AllRecords
+
+Constant
+C:\PlantWatchConfig\SolutionData\Config Files\
+Constant
+PartNumbers
+Constant
+txt
+
+Cell 0 5
+
+ActionReadFromFile
+Array
+DefectArray
+Constant
+1
+Constant
+5
+Constant
+C:\PlantWatchConfig\SolutionData\Config Files\
+Constant
+Defects
+Constant
+txt
+
+Cell 0 6
+
+Math
+Constant
+Select an Operator
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+
+Cell 0 7
+
+Math
+Constant
+Grey
+
+
+Constant
+
+SetVariableToValue
+DefectButtonBGColor
+
+
+
+
+
+Cell 0 8
+
+Math
+Constant
+0
+
+
+Constant
+
+SetVariableToValue
+GoodPartCount
+
+
+
+
+
+Cell 0 9
+
+Math
+Constant
+0
+
+
+Constant
+
+SetVariableToValue
+BadPartCount
+
+
+
+
+
+
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MarkPartButtonLogicChart
+
+ABCStation
+GuiLogicChartHolder
+n
+
+
+
+Cell 0 1
+
+If
+Constant
+Grey
+<>
+
+
+Variable
+MarkPartButtonBGColor
+
+Cell 0 2
+
+If
+Constant
+Part Type Verified
+=
+
+
+Variable
+VerifiedScannedPartNumber
+
+Cell 0 3
+
+Math
+Constant
+Creating Mark Files....
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+
+Cell 0 4
+
+ActionWriteToFile
+Variable
+MarkDataString
+No
+Constant
+C:\PlantWatchConfig\SolutionData\MarkFiles\
+Variable
+UID
+Constant
+.MD
+Yes
+
+Cell 0 5
+
+ActionWriteToFile
+Variable
+MarkDataString
+No
+Constant
+C:\PlantWatchConfig\SolutionData\MarkFiles\
+Variable
+UID
+Constant
+.HR
+Yes
+
+Cell 0 6
+
+FileManager
+Constant
+C:\PlantWatchConfig\SolutionData\MarkFiles\
+Variable
+UID
+Constant
+.HR
+Constant
+
+Constant
+
+Constant
+
+CheckForExistance
+
+FileOperationStatus
+Variable
+Garbage
+Constant
+1
+Constant
+1
+
+Cell 0 7
+
+If
+Variable
+FileOperationStatus
+=
+
+
+Constant
+Pass
+
+Cell 0 8
+
+FileManager
+Constant
+C:\PlantWatchConfig\SolutionData\MarkFiles\
+Variable
+UID
+Constant
+.MD
+Constant
+
+Constant
+
+Constant
+
+CheckForExistance
+
+FileOperationStatus
+Variable
+Garbage
+Constant
+1
+Constant
+1
+
+Cell 0 9
+
+If
+Variable
+FileOperationStatus
+=
+
+
+Constant
+Pass
+
+Cell 0 10
+
+Math
+Constant
+Mark Files Created....
+
+
+Constant
+
+SetVariableToValue
+MessageStringTimed
+
+
+
+
+
+Cell 1 1
+
+StoredProcedure
+MyDatabase
+usp_InsertItemParts
+3
+0
+SQLResults
+@PartType
+Variable
+Scanner Data
+String
+30
+@ItemID
+Variable
+UID
+String
+30
+@CreateTime
+Variable
+FormattedTimeStamp
+String
+30
+
+Cell 1 2
+
+If
+Variable
+SQLResults
+=
+
+
+Constant
+0
+
+Cell 1 3
+
+StoredProcedure
+MyDatabase
+usp_InsertItemEvent
+4
+1
+SQLResults
+@ItemID
+Variable
+UID
+String
+30
+@EventType
+Constant
+Birth
+String
+30
+@Station
+Constant
+Lead-Off
+String
+30
+@EventTime
+Variable
+FormattedTimeStamp
+String
+30
+@ItemEventID
+Numeric
+ItemEventID
+
+Cell 1 4
+
+If
+Variable
+SQLResults
+=
+
+
+Constant
+0
+
+Cell 1 5
+
+StoredProcedure
+MyDatabase
+usp_InsertItemEventAttr
+3
+0
+SQLResults
+@ItemEventID
+Variable
+ItemEventID
+String
+30
+@AttName
+Constant
+Operator
+String
+30
+@AttValue
+Variable
+SelectedOperator
+String
+60
+
+Cell 1 6
+
+If
+Variable
+SQLResults
+=
+
+
+Constant
+0
+
+Cell 1 7
+
+Math
+Constant
+Grey
+
+
+Constant
+
+SetVariableToValue
+MarkPartButtonBGColor
+
+
+
+
+
+Cell 1 8
+
+Math
+Constant
+Scan next Part
+
+
+Constant
+
+SetVariableToValue
+MessageString
+
+
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+RecordDefectButtonLogicChart
+
+ABCStation
+GuiLogicChartHolder
+n
+
+
+
+Cell 0 2
+
+If
+Variable
+VerifiedScannedPartNumber
+=
+
+
+Constant
+Part Type Verified
+
+Cell 0 3
+
+If
+Variable
+MarkPartButtonBGColor
+<>
+
+
+Constant
+LawnGreen
+
+Cell 0 4
+
+Math
+Variable
+SelectedDefect
+
+
+Constant
+
+SetVariableToValue
+DefectString
+
+
+
+
+
+Cell 0 5
+
+If
+Variable
+ItemEventID
+<>
+
+
+Constant
+0
+
+Cell 0 6
+
+If
+Variable
+SelectedDefect
+<>
+
+
+Constant
+0
+
+Cell 0 7
+
+StoredProcedure
+MyDatabase
+usp_InsertItemEventAttr
+3
+0
+SQLResults
+@ItemEventID
+Variable
+ItemEventID
+String
+30
+@AttName
+Constant
+Defect
+String
+30
+@AttValue
+Variable
+SelectedDefect
+String
+60
+
+Cell 0 8
+
+ActionWriteToFile
+Variable
+DefectString
+Yes
+Constant
+C:\PlantWatchConfig\SolutionData\DefecttData\
+Constant
+DefectDB
+Constant
+txt
+Yes
+
+Cell 0 9
+
+Math
+Constant
+Grey
+
+
+Constant
+
+SetVariableToValue
+DefectButtonBGColor
+
+
+
+
+
+Cell 0 10
+
+Math
+Constant
+Scan Part Number
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+
+
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+RxLaserLogic
+
+ABCStation
+Laser
+n
+
+
+
+Cell 0 1
+
+
+
+Cell 0 2
+
+
+
+Cell 0 3
+
+
+
+Cell 0 4
+
+
+
+Cell 0 5
+
+
+
+Cell 0 6
+
+
+
+Cell 0 7
+
+
+
+Cell 0 8
+
+
+
+Cell 0 9
+
+
+
+Cell 0 10
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+Scanner Logic
+
+ABCStation
+Scanner Port
+n
+
+
+
+Cell 0 1
+Rx Scanner Data
+Math
+Device
+
+
+
+Constant
+
+SetVariableToValue
+Scanner Data
+
+
+
+
+
+Cell 0 2
+Rx Scanner Data
+Math
+Constant
+Grey
+
+
+Constant
+
+SetVariableToValue
+MarkPartButtonBGColor
+
+
+
+
+
+Cell 0 3
+
+Math
+Constant
+You must select an Operator
+
+
+Constant
+
+SetVariableToValue
+MessageString
+
+
+
+
+
+Cell 0 4
+
+If
+Variable
+SelectedOperator
+<>
+
+
+Constant
+0
+
+Cell 0 5
+
+Math
+Constant
+You must select an Part Type
+
+
+Constant
+
+SetVariableToValue
+MessageString
+
+
+
+
+
+Cell 0 6
+
+If
+Variable
+SelectedPartNumber
+<>
+
+
+Constant
+0
+
+Cell 0 7
+
+Math
+Constant
+Not Verified
+
+
+Constant
+
+SetVariableToValue
+VerifiedScannedPartNumber
+
+
+
+
+
+Cell 0 8
+
+Math
+Constant
+Selected Part does not match Scanned Part
+
+
+Constant
+
+SetVariableToValue
+MessageString
+
+
+
+
+
+Cell 0 9
+
+If
+Variable
+SelectedPartNumber
+=
+
+
+Variable
+Scanner Data
+
+Cell 0 10
+
+Math
+Constant
+Part Type Verified
+
+
+Constant
+
+SetVariableToValue
+VerifiedScannedPartNumber
+
+
+
+
+
+Cell 1 2
+
+Math
+Constant
+LawnGreen
+
+
+Constant
+
+SetVariableToValue
+MarkPartButtonBGColor
+
+
+
+
+
+Cell 1 3
+
+Math
+Variable
+TimeStamp
+
+
+Constant
+
+SetVariableToValue
+UID
+
+
+
+
+
+Cell 1 4
+
+Math
+Variable
+UID
+
+
+Constant
+
+SetVariableToValue
+MarkDataString
+
+
+
+
+
+Cell 1 5
+
+Math
+Variable
+UID
+
+
+Constant
+
+SetVariableToValue
+CurrentUID
+
+
+
+
+
+Cell 1 6
+
+Math
+Constant
+Press Create UID Button
+
+
+Constant
+
+SetVariableToValue
+MessageString
+
+
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+
+
+
+
+
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+
+
+
+ScannerLogicPart2
+
+ABCStation
+Scanner Port
+n
+
+
+
+Cell 0 2
+
+Math
+Variable
+MessageString
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+
+Cell 0 3
+
+
+
+Cell 0 4
+
+
+
+Cell 0 5
+
+
+
+Cell 0 6
+
+
+
+Cell 0 7
+
+
+
+Cell 0 8
+
+
+
+Cell 0 9
+
+
+
+Cell 0 10
+
+
+
+
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+SelectedDefectTriggerLogicVarable
+
+ABCStation
+SelectedDefectTriggerLogic
+n
+
+
+
+Cell 0 1
+
+Math
+Constant
+ Part Type Needs to be Selected
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+
+Cell 0 2
+
+If
+Variable
+VerifiedScannedPartNumber
+=
+
+
+Constant
+Part Type Verified
+
+Cell 0 3
+
+Math
+Constant
+LawnGreen
+
+
+Constant
+
+SetVariableToValue
+DefectButtonBGColor
+
+
+
+
+
+Cell 0 4
+
+Math
+Variable
+SelectedDefect
+
+
+Constant
+
+SetVariableToValue
+DefectString
+
+
+
+
+
+Cell 0 5
+
+
+
+Cell 0 6
+
+
+
+Cell 0 7
+
+
+
+Cell 0 8
+
+
+
+Cell 0 9
+
+
+
+Cell 0 10
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+SelectedOperatorTriggerLogic
+
+ABCStation
+SelectedOperatorTriggerVariable
+n
+
+
+
+Cell 0 1
+
+Math
+Constant
+Select Part Type
+
+
+Constant
+
+SetVariableToValue
+MessageString
+
+
+
+
+
+Cell 0 2
+
+Math
+Variable
+MessageString
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+
+Cell 0 3
+
+
+
+Cell 0 4
+
+
+
+Cell 0 5
+
+
+
+Cell 0 6
+
+
+
+Cell 0 7
+
+
+
+Cell 0 8
+
+
+
+Cell 0 9
+
+
+
+Cell 0 10
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+SelectedPartNumberTriggerLogic
+
+ABCStation
+SelectedPartNumberTriggerVariable
+n
+
+
+
+Cell 0 1
+
+Math
+Constant
+Operator needs to be selected
+
+
+Constant
+
+SetVariableToValue
+MessageString
+
+
+
+
+
+Cell 0 2
+
+If
+Variable
+SelectedOperator
+<>
+
+
+Constant
+ 0
+
+Cell 0 3
+
+Math
+Constant
+Select Part Tpe
+
+
+Constant
+
+SetVariableToValue
+MessageString
+
+
+
+
+
+Cell 0 4
+
+
+
+Cell 0 5
+
+
+
+Cell 0 6
+
+
+
+Cell 0 7
+
+
+
+Cell 0 8
+
+
+
+Cell 0 9
+
+
+
+Cell 0 10
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+TriggerInspectionScannerButtonLogicChart
+
+ABCStation
+GuiLogicChartHolder
+n
+
+
+
+Cell 0 1
+
+
+
+Cell 0 2
+
+
+
+Cell 0 3
+
+
+
+Cell 0 4
+
+
+
+Cell 0 5
+
+
+
+Cell 0 6
+
+
+
+Cell 0 7
+
+
+
+Cell 0 8
+
+
+
+Cell 0 9
+
+
+
+Cell 0 10
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+UITimedMsgLogicChart
+
+ABCStation
+UITimedMsg
+n
+
+
+
+Cell 0 1
+
+If
+Variable
+MessageStringTimed
+<>
+
+
+Constant
+0
+
+Cell 0 2
+
+Math
+Variable
+MessageString
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+
+Cell 0 3
+
+If
+Constant
+
+<
+
+
+Constant
+4
+
+Cell 0 4
+
+Math
+Variable
+MessageStringTimed
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+
+Cell 0 5
+
+Math
+Variable
+UITimer
+
+
+Constant
+1
+AddAsNumbers
+UITimer
+
+
+
+
+
+Cell 0 6
+
+
+
+Cell 0 7
+
+
+
+Cell 0 8
+
+
+
+Cell 0 9
+
+
+
+Cell 0 10
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+UITimerMsgLogicTimerHitChart
+
+ABCStation
+UITimedMsg
+n
+
+
+
+Cell 0 1
+
+If
+Variable
+UITimer
+>
+
+
+Constant
+4
+
+Cell 0 2
+
+Math
+Variable
+MessageHolder
+
+
+Constant
+
+SetVariableToValue
+Status
+
+
+
+
+
+Cell 0 3
+
+Math
+Constant
+0
+
+
+Constant
+
+SetVariableToValue
+MessageStringTimed
+
+
+
+
+
+Cell 0 4
+
+Math
+Constant
+0
+
+
+Constant
+
+SetVariableToValue
+MessageHolder
+
+
+
+
+
+Cell 0 5
+
+Math
+Constant
+0
+
+
+Constant
+
+SetVariableToValue
+UITimer
+
+
+
+
+
+Cell 0 6
+
+
+
+Cell 0 7
+
+
+
+Cell 0 8
+
+
+
+Cell 0 9
+
+
+
+Cell 0 10
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+
+ZebraComPortLogicChart
+
+ABCStation
+ZebraPrinterSocket
+n
+
+
+
+Cell 0 1
+
+PrintBarcode
+Zebra G120 Barcode Printer
+2
+Box
+Box
+10
+10
+Variable
+Scanner Data
+25
+25
+5
+Black
+ 0
+DM
+Data Matrix
+20
+20
+Variable
+Scanner Data
+Normal
+30
+0
+4
+4
+Uppercase Alphanumeric + space , period, comma, dash, and slash
+
+Square
+
+Cell 0 2
+
+
+
+Cell 0 3
+
+
+
+Cell 0 4
+
+
+
+Cell 0 5
+
+
+
+Cell 0 6
+
+
+
+Cell 0 7
+
+
+
+Cell 0 8
+
+
+
+Cell 0 9
+
+
+
+Cell 0 10
+
+
+
+Cell 1 1
+
+
+
+Cell 1 2
+
+
+
+Cell 1 3
+
+
+
+Cell 1 4
+
+
+
+Cell 1 5
+
+
+
+Cell 1 6
+
+
+
+Cell 1 7
+
+
+
+Cell 1 8
+
+
+
+Cell 1 9
+
+
+
+Cell 1 10
+
+
+
+Cell 2 1
+
+
+
+Cell 2 2
+
+
+
+Cell 2 3
+
+
+
+Cell 2 4
+
+
+
+Cell 2 5
+
+
+
+Cell 2 6
+
+
+
+Cell 2 7
+
+
+
+Cell 2 8
+
+
+
+Cell 2 9
+
+
+
+Cell 2 10
+
+

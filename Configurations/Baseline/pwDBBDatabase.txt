@@ -1,0 +1,14 @@
+1
+MyDatabase
+
+Data Source=(local);Initial Catalog=TSI-DATASELF;Integrated Security=SSPI
+2000
+NativeSQL
+
+10
+No
+no
+
+
+
+

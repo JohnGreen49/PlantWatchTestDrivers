@@ -1,0 +1,100 @@
+Scanner Port
+Serial Handheld Scanner Port
+COMPort
+
+No
+6
+19200,n,8,1
+n
+0
+n
+
+n
+
+InitializationThread
+Interval Timer Initializatiion
+Interval
+
+No
+1
+MarkButtonLogic
+Mark Button Logic
+Variable
+
+No
+MarkButtonTrigger
+No
+FixedMountREader
+TCP|IP Fixed Mount Reader
+Socket
+
+No
+2001
+192.168.188.2
+n
+0
+n
+
+n
+
+no
+
+
+
+
+Laser
+TCP/IP Laser
+Socket
+
+No
+4096
+192.168.1.1
+n
+0
+n
+
+n
+
+no
+
+
+
+
+GuiLogicChartHolder
+GUI Logic Chart Holder
+Variable
+
+No
+PlaceHolder
+No
+ZebraPrinter
+Serial Barcode Label Printer
+COMPort
+
+Yes
+1
+9600,n,8,1
+n
+0
+n
+
+n
+
+angstrom Fixed scanner
+
+Socket
+
+No
+4096
+192.168.1.1
+n
+0
+n
+
+n
+
+no
+
+
+
+

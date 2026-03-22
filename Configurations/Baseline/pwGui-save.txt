@@ -1,0 +1,576 @@
+
+Screens, count is next line
+4
+Test Screen
+
+Silver
+Buttons, count is next line
+4
+ExecuteLogicButton3
+Mark Part
+289
+97
+3480
+54
+Black
+LawnGreen
+14
+ExecuteLogic
+
+MarkPartButtonLogicChart
+Constant
+
+1
+
+
+
+
+
+ExecuteLogicButton1
+Load Mark Data
+97
+97
+3480
+54
+Black
+LawnGreen
+14
+ExecuteLogic
+
+LoadMarkDataButtonLogic
+Constant
+
+1
+
+
+
+
+
+ExecuteLogicButton1_1
+Record Defect
+489
+434
+3480
+30
+Black
+CadetBlue
+14
+ExecuteLogic
+
+RecordDefectButtonLogicChart
+Constant
+
+1
+
+
+
+
+
+ExecuteLogicButton2
+Print Label
+477
+97
+3480
+54
+Black
+LawnGreen
+14
+ExecuteLogic
+
+PrintLabelButtonLogicChart
+Constant
+
+1
+
+
+
+
+
+Labels, count is next line
+20
+Label1
+
+224
+301
+206
+20
+Black
+White
+12
+Scanner Data
+Variable
+
+
+
+Left
+Label1_1
+Part Serial Number
+47
+301
+155
+20
+SteelBlue
+Silver
+12
+Part Serial Number
+Constant
+
+
+
+Left
+Label6
+Scan the Part
+18
+25
+884
+35
+Black
+DimGray
+24
+Scan the Part
+Constant
+
+
+
+Center
+Label5
+Time/Date of Scan
+479
+301
+164
+20
+SteelBlue
+Silver
+12
+Time/Date of Scan
+Constant
+
+
+
+Left
+Label4
+
+647
+297
+217
+20
+Black
+White
+12
+TimeStamp
+Variable
+
+
+
+Left
+Label3
+Select Operator
+48
+214
+146
+20
+Teal
+Silver
+12
+Select Operator
+Constant
+
+
+
+Left
+Label2_1
+Select Part Number
+483
+214
+158
+20
+Teal
+Silver
+12
+Select Part Number
+Constant
+
+
+
+Left
+Label3_2
+Production Count (Good)
+45
+537
+228
+20
+SlateGray
+Silver
+12
+Production Count (Good)
+Constant
+
+
+
+Left
+Label2_2
+
+295
+536
+180
+20
+Black
+White
+12
+Garbage
+Variable
+
+
+
+Left
+Label1_3
+-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+24
+167
+884
+20
+Teal
+Silver
+14
+-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label2
+------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+24
+256
+884
+20
+SteelBlue
+Silver
+14
+------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label1_4
+
+224
+346
+206
+20
+Black
+White
+12
+VerifiedScannedPartNumber
+Variable
+
+
+
+Left
+Label2_3
+Part Number Verified
+47
+346
+156
+20
+SteelBlue
+Silver
+12
+Part Number Verified
+Constant
+
+
+
+Left
+Label1_6
+Defects
+46
+438
+95
+17
+DarkGoldenrod
+Silver
+12
+Defects
+Constant
+
+
+
+Left
+Label1_7
+Production Count (Defective)
+44
+570
+232
+20
+SlateGray
+Silver
+12
+Production Count (Defective)
+Constant
+
+
+
+Left
+Label2_5
+
+297
+571
+180
+20
+Black
+White
+12
+Garbage
+Variable
+
+
+
+Left
+Label1_2
+powered by
+47
+625
+81
+20
+SteelBlue
+Silver
+8
+powered by
+Constant
+
+
+
+Left
+Label1_5
+------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+24
+391
+884
+20
+DarkGoldenrod
+Silver
+14
+------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label1_8
+------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+24
+500
+884
+20
+SlateGray
+Silver
+14
+------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label1_9
+Scan the Part
+15
+21
+884
+35
+Black
+Aquamarine
+24
+Scan the Part
+Constant
+
+
+
+Left
+Inputs, count is next line
+0
+Images, count is next line
+2
+Image1
+
+938
+11
+156
+151
+C:\PlantWatchConfig\Images\track-pak logo transparent 30% .png
+Constant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No
+Image2
+
+130
+582
+144
+62
+C:\PlantWatchConfig\Images\PlantWatch Logo_vectorformat_031111_transparent 138 by 38.png
+Constant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No
+Listboxes, count is next line
+0
+Dropdowns, count is next line
+3
+DropDown1
+
+647
+209
+4340
+27
+WindowText
+ControlLightLight
+12
+PartNumberArray
+5
+SekectedPartNumber
+
+
+
+DropDown2
+
+222
+208
+4300
+27
+WindowText
+Window
+12
+OperatorArray
+3
+SelectedOperator
+
+
+
+DropDown2_1
+
+148
+434
+6140
+27
+WindowText
+ControlLightLight
+12
+DefectArray
+5
+SelectedDefect
+
+
+
+WebPages, count is next line
+0
+Main Screen
+
+Color [A=255, R=0, G=128, B=192]
+Buttons, count is next line
+0
+Labels, count is next line
+2
+Label1
+Scanned Data Value
+437
+394
+254
+20
+Black
+White
+14
+Scanned Data Value
+Constant
+
+
+
+Left
+Label2
+
+701
+396
+60
+20
+Black
+White
+14
+Scanner Data
+Variable
+
+
+
+Left
+Inputs, count is next line
+0
+Images, count is next line
+0
+Listboxes, count is next line
+0
+Dropdowns, count is next line
+0
+WebPages, count is next line
+0
+test background color on create
+
+Color [A=255, R=128, G=128, B=255]
+Buttons, count is next line
+0
+Labels, count is next line
+0
+Inputs, count is next line
+0
+Images, count is next line
+0
+Listboxes, count is next line
+0
+Dropdowns, count is next line
+0
+WebPages, count is next line
+0
+PinkRoseRed Color Screen
+
+Fuchsia
+Buttons, count is next line
+0
+Labels, count is next line
+0
+Inputs, count is next line
+0
+Images, count is next line
+0
+Listboxes, count is next line
+0
+Dropdowns, count is next line
+0
+WebPages, count is next line
+0
