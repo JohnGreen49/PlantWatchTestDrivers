@@ -1,0 +1,428 @@
+- name: FixedMountReaderLogic
+  station: ABCStation
+  associatedDeviceName: FixedMountREader
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: Math
+      sourceType: Device
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Reader Data
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: 'Fixed Mount Reader = '
+      source2Type: Variable
+      source2: Reader Data
+      operator: Add2StringsToEnd
+      variable: Status
+  - action:
+      actionType: If
+      sourceType: Variable
+      source: Garbage
+      compareOperator: =
+      containsInstanceCountVariable: Combo1
+      comparedToType: Variable
+      comparedTo: Garbage
+  - action:
+      actionType: Math
+      sourceType: Variable
+      source: GoodPartCount
+      source2Type: Constant
+      source2: 1
+      operator: AddAsNumbers
+      variable: GoodPartCount
+- name: InitializationThreadLogix
+  station: ABCStation
+  associatedDeviceName: InitializationThread
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: If
+      sourceType: Variable
+      source: Initialize
+      compareOperator: =
+      containsInstanceCountVariable: Combo1
+      comparedToType: Constant
+      comparedTo: 0
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: 1
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Initialize
+  - action:
+      actionType: ActionReadFromFile
+      resultVariableType: Array
+      resultVariable: OperatorArray
+      resultVariableArrayStartIndexType: Constant
+      resultVariableArrayStartIndex: 1
+      resultVariableArrayLengthType: AllRecords
+      fileSpecPathType: Constant
+      fileSpecPath: C:\PlantWatchConfig\SolutionData\
+      fileSpecFilenameType: Constant
+      fileSpecFilename: Operators
+      fileSpecFileExtensionType: Constant
+      fileSpecFileExtension: txt
+  - action:
+      actionType: ActionReadFromFile
+      resultVariableType: Array
+      resultVariable: PartNumberArray
+      resultVariableArrayStartIndexType: Constant
+      resultVariableArrayStartIndex: 1
+      resultVariableArrayLengthType: AllRecords
+      fileSpecPathType: Constant
+      fileSpecPath: C:\PlantWatchConfig\SolutionData\
+      fileSpecFilenameType: Constant
+      fileSpecFilename: PartNumbers
+      fileSpecFileExtensionType: Constant
+      fileSpecFileExtension: txt
+  - action:
+      actionType: ActionReadFromFile
+      resultVariableType: Array
+      resultVariable: DefectArray
+      resultVariableArrayStartIndexType: Constant
+      resultVariableArrayStartIndex: 1
+      resultVariableArrayLengthType: Constant
+      resultVariableArrayLength: 5
+      fileSpecPathType: Constant
+      fileSpecPath: C:\PlantWatchConfig\SolutionData\
+      fileSpecFilenameType: Constant
+      fileSpecFilename: Defects
+      fileSpecFileExtensionType: Constant
+      fileSpecFileExtension: txt
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Select an Operator
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Status
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Grey
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkPartButtonBGColor
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Grey
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: PrintLabelButtonBGColor
+- name: LogicChart10
+  station: ABCStation
+  associatedDeviceName: GuiLogicChartHolder
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: PrintBarcode
+      printerName: Zebra G120 Barcode Printer
+      fields:
+      - fieldName: Name
+        fieldType: Data Matrix
+        positionX: 50
+        positionY: 50
+        sourceType: Variable
+        source: JUstPrintData
+- name: MarkButtonLogicChart
+  station: ABCStation
+  associatedDeviceName: MarkButtonLogic
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: If
+      sourceType: Constant
+      source: PartNumberVerified
+      compareOperator: =
+      containsInstanceCountVariable: Combo1
+      comparedToType: Variable
+      comparedTo: VerifiedScannedPartNumber
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Loading Marking Data.....
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Status
+  - action:
+      actionType: ActionWriteToDevice
+      prefixType: Constant
+      sourceType: Variable
+      source: MarkDataString
+      suffixType: Constant
+      addCrLf: No
+      device: Laser
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: 'Marking Part - '
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Status
+  - action:
+      actionType: Math
+      sourceType: Variable
+      source: MarkDataString
+      source2Type: Constant
+      operator: AddStringToEnd
+      variable: Status
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Grey
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkPartButtonBGColor
+- name: MarkPartButtonLogicChart
+  station: ABCStation
+  associatedDeviceName: GuiLogicChartHolder
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: If
+      sourceType: Device
+      compareOperator: =
+      containsInstanceCountVariable: Combo1
+      comparedToType: Constant
+      comparedTo: TCP:[
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Grey
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkPartButtonBGColor
+  - action:
+      actionType: ActionWriteToDevice
+      prefixType: Constant
+      sourceType: Variable
+      source: MarkDataString
+      suffixType: Constant
+      addCrLf: No
+      device: Laser
+- name: PrintLabelButtonLogicChart
+  station: ABCStation
+  associatedDeviceName: GuiLogicChartHolder
+  controlCharsEnabled: false
+- name: RecordDefectButtonLogicChart
+  station: ABCStation
+  associatedDeviceName: GuiLogicChartHolder
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: If
+      sourceType: Constant
+      compareOperator: <>
+      comparedToType: Constant
+      comparedTo: 0
+  - action:
+      actionType: ActionWriteToFile
+      valueType: Variable
+      value: SelectedDefect
+      append: Yes
+      fileSpecPathType: Constant
+      fileSpecPath: C:\PlantWatchConfig\SolutionData\
+      fileSpecFilenameType: Constant
+      fileSpecFilename: DefectDB
+      fileSpecFileExtensionType: Constant
+      fileSpecFileExtension: txt
+      addCrLf: Yes
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: 0
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: SelectedDefect
+- name: RxLaserLogic
+  station: ABCStation
+  associatedDeviceName: Laser
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: If
+      sourceType: Device
+      compareOperator: =
+      containsInstanceCountVariable: Combo1
+      comparedToType: Constant
+      comparedTo: TCP:[
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: ' '
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Scanner Data
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Completed Part Marking...
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Status
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Not Verified
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: VerifiedScannedPartNumber
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Grey
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkPartButtonBGColor
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Lawn Green
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: PrintLabelButtonBGColor
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: ' '
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkDataString
+  - action:
+      actionType: Math
+      sourceType: Variable
+      source: GoodPartCount
+      source2Type: Constant
+      source2: 1
+      operator: AddAsNumbers
+      variable: GoodPartCount
+- name: Scanner Logic
+  station: ABCStation
+  associatedDeviceName: Scanner Port
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: Math
+      sourceType: Device
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Scanner Data
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Not Verified
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: VerifiedScannedPartNumber
+  - action:
+      actionType: If
+      sourceType: Variable
+      source: Scanner Data
+      compareOperator: =
+      containsInstanceCountVariable: Combo1
+      comparedToType: Variable
+      comparedTo: SekectedPartNumber
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Part Number Verified
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: VerifiedScannedPartNumber
+  - action:
+      actionType: Math
+      sourceType: Variable
+      source: TimeStamp
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: UID
+- name: SelectedOperatorTriggerLogic
+  station: ABCStation
+  associatedDeviceName: SelectedOperatorTriggerVariable
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Select Part Number
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Status
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Grey
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkPartButtonBGColor
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Grey
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: PrintLabelButtonBGColor
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: 0
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: SekectedPartNumber
+- name: SelectedPartNumberTriggerLogic
+  station: ABCStation
+  associatedDeviceName: SelectedPartNumberTriggerVariable
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Scan Part Number
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Status
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: LimeGreen
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkPartButtonBGColor
+- name: ZebraComPortLogicChart
+  station: ABCStation
+  associatedDeviceName: ZebraPrinterSocket
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: PrintBarcode
+      printerName: Zebra G120 Barcode Printer
+      fields:
+      - fieldName: Box
+        fieldType: Box
+        positionX: 10
+        positionY: 10
+        sourceType: Variable
+        source: Scanner Data
+        boxWidth: 25
+        boxHeight: 25
+        boxLineThickness: 5
+        boxLineColor: Black
+        boxCornerRoundness: ' 0'
+      - fieldName: DM
+        fieldType: Data Matrix
+        positionX: 20
+        positionY: 20
+        sourceType: Variable
+        source: Scanner Data
+        dMXOrientation: Normal
+        dMXCellHeight: 30
+        dMXECC: 0
+        dMXColumns: 4
+        dMXRows: 4
+        dMXCharSet: Uppercase Alphanumeric + space , period, comma, dash, and slash
+        dMXAspectRatio: Square

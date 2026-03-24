@@ -1,0 +1,1008 @@
+startupScreen: Lead-Off Screen
+screens:
+- name: Inspection
+  backgroundColor: Silver
+  buttons:
+  - name: ChangeFormButton4
+    description: Pack Out
+    xposition: 959
+    yposition: 808
+    width: 2460
+    height: 35
+    fGColor: Black
+    bGColor: White
+    font: 14
+    type: ScreenChange
+    screenChangeScreenName: Pack out
+  - name: ChangeFormButton3
+    description: Inspection
+    xposition: 959
+    yposition: 842
+    width: 2460
+    height: 35
+    fGColor: Black
+    bGColor: White
+    font: 14
+    type: ScreenChange
+    screenChangeScreenName: Inspection
+  - name: ExecuteLogicButton2
+    description: Record Defect
+    xposition: 957
+    yposition: 516
+    width: 3480
+    height: 54
+    fGColor: Black
+    bGColor: LawnGreen
+    font: 14
+    type: ExecuteLogic
+    executeLogicLogicName: RecordDefectButtonLogicChart
+    executeLogicDeviceValueSourceType: Constant
+    executeLogicDeviceValue: 1
+    bGColorVariable: DefectButtonBGColor
+  - name: ExecuteLogicButton1
+    description: Trigger Scanner
+    xposition: 957
+    yposition: 270
+    width: 3480
+    height: 54
+    fGColor: Black
+    bGColor: LawnGreen
+    font: 14
+    type: ExecuteLogic
+    executeLogicLogicName: TriggerInspectionScannerButtonLogicChart
+    executeLogicDeviceValueSourceType: Constant
+    executeLogicDeviceValue: 1
+    bGColorVariable: MarkPartButtonBGColor
+  labels:
+  - name: Label24
+    xposition: 25
+    yposition: 104
+    width: 1200
+    height: 87
+    fGColor: Black
+    bGColor: Aquamarine
+    font: 24
+    source: Status
+    sourceType: Variable
+    textAlign: Left
+  - name: Label23
+    description: '------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 20
+    yposition: 580
+    width: 1200
+    height: 20
+    fGColor: SlateGray
+    bGColor: Silver
+    font: 16
+    source: '------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label22
+    description: '------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 20
+    yposition: 471
+    width: 1200
+    height: 25
+    fGColor: DarkGoldenrod
+    bGColor: Silver
+    font: 16
+    source: '------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label21
+    description: powered by
+    xposition: 244
+    yposition: 800
+    width: 81
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 8
+    source: powered by
+    sourceType: Constant
+    textAlign: Left
+  - name: Label20
+    xposition: 353
+    yposition: 655
+    width: 180
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: BadPartCount
+    sourceType: Variable
+    textAlign: Left
+  - name: Label19
+    description: Production Count (Defective)
+    xposition: 46
+    yposition: 665
+    width: 280
+    height: 20
+    fGColor: SlateGray
+    bGColor: Silver
+    font: 14
+    source: Production Count (Defective)
+    sourceType: Constant
+    textAlign: Left
+  - name: Label18
+    description: Defects
+    xposition: 42
+    yposition: 518
+    width: 95
+    height: 17
+    fGColor: DarkGoldenrod
+    bGColor: Silver
+    font: 14
+    source: Defects
+    sourceType: Constant
+    textAlign: Left
+  - name: Label17
+    description: Part UID
+    xposition: 43
+    yposition: 426
+    width: 156
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: Part UID
+    sourceType: Constant
+    textAlign: Left
+  - name: Label16
+    xposition: 221
+    yposition: 429
+    width: 286
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: MarkDataString
+    sourceType: Variable
+    textAlign: Left
+  - name: Label15
+    description: '------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 28
+    yposition: 333
+    width: 1200
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 16
+    source: '------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label14
+    description: '-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 28
+    yposition: 214
+    width: 1212
+    height: 30
+    fGColor: Teal
+    bGColor: Silver
+    font: 16
+    source: '-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label13
+    xposition: 352
+    yposition: 614
+    width: 180
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: GoodPartCount
+    sourceType: Variable
+    textAlign: Left
+  - name: Label12
+    description: Production Count (Good)
+    xposition: 36
+    yposition: 622
+    width: 250
+    height: 20
+    fGColor: SlateGray
+    bGColor: Silver
+    font: 14
+    source: Production Count (Good)
+    sourceType: Constant
+    textAlign: Left
+  - name: Label10
+    description: Select Operator
+    xposition: 44
+    yposition: 279
+    width: 161
+    height: 30
+    fGColor: Teal
+    bGColor: Silver
+    font: 14
+    source: Select Operator
+    sourceType: Constant
+    textAlign: Left
+  - name: Label9
+    xposition: 713
+    yposition: 380
+    width: 217
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: TimeStamp
+    sourceType: Variable
+    textAlign: Left
+  - name: Label8
+    description: Time/Date of Scan
+    xposition: 504
+    yposition: 388
+    width: 189
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: Time/Date of Scan
+    sourceType: Constant
+    textAlign: Left
+  - name: Label7
+    description: Inspection Station
+    xposition: 32
+    yposition: 24
+    width: 1207
+    height: 54
+    fGColor: Black
+    bGColor: Transparent
+    font: 24
+    source: Inspection Station
+    sourceType: Constant
+    textAlign: Left
+  - name: Label6
+    description: Part Type
+    xposition: 43
+    yposition: 381
+    width: 155
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: Part Type
+    sourceType: Constant
+    textAlign: Left
+  - name: Label5
+    xposition: 220
+    yposition: 381
+    width: 206
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: Scanner Data
+    sourceType: Variable
+    textAlign: Left
+  inputs: []
+  images:
+  - name: Image26
+    xposition: 914
+    yposition: 635
+    width: 144
+    height: 62
+    source: C:\PlantWatchConfig\Images\PlantWatch Logo_vectorformat_031111_transparent 138 by 38.png
+    sourceType: Constant
+    refreshOnlyOnNameChange: No
+  - name: Image25
+    xposition: 1070
+    yposition: 588
+    width: 137
+    height: 145
+    source: C:\PlantWatchConfig\Images\track-pak logo transparent 30% .png
+    sourceType: Constant
+    refreshOnlyOnNameChange: No
+  listboxes: []
+  dropdowns:
+  - name: DropDown29
+    xposition: 208
+    yposition: 517
+    width: 9400
+    height: 30
+    fGColor: WindowText
+    bGColor: ControlLightLight
+    font: 14
+    variable: DefectArray
+    arrayLength: 5
+    outputVariable: SelectedDefect
+  - name: DropDown28
+    xposition: 218
+    yposition: 279
+    width: 4300
+    height: 30
+    fGColor: WindowText
+    bGColor: Window
+    font: 14
+    variable: OperatorArray
+    arrayLength: 10
+    outputVariable: SelectedOperator
+  webPages: []
+  outputTexts: []
+- name: Lead-Off Screen
+  backgroundColor: Silver
+  buttons:
+  - name: ExecuteLogicButton3
+    description: Create UID
+    xposition: 962
+    yposition: 271
+    width: 3480
+    height: 54
+    fGColor: Black
+    bGColor: LawnGreen
+    font: 14
+    type: ExecuteLogic
+    executeLogicLogicName: MarkPartButtonLogicChart
+    executeLogicDeviceValueSourceType: Constant
+    executeLogicDeviceValue: 1
+    bGColorVariable: MarkPartButtonBGColor
+  - name: ExecuteLogicButton1_1
+    description: Record Defect
+    xposition: 962
+    yposition: 517
+    width: 3480
+    height: 54
+    fGColor: Black
+    bGColor: LawnGreen
+    font: 14
+    type: ExecuteLogic
+    executeLogicLogicName: RecordDefectButtonLogicChart
+    executeLogicDeviceValueSourceType: Constant
+    executeLogicDeviceValue: 1
+    bGColorVariable: DefectButtonBGColor
+  - name: ChangeFormButton59
+    description: Inspection
+    xposition: 964
+    yposition: 843
+    width: 2460
+    height: 35
+    fGColor: Black
+    bGColor: White
+    font: 14
+    type: ScreenChange
+    screenChangeScreenName: Inspection
+  - name: ChangeFormButton1
+    description: Pack Out
+    xposition: 964
+    yposition: 809
+    width: 2460
+    height: 35
+    fGColor: Black
+    bGColor: White
+    font: 14
+    type: ScreenChange
+    screenChangeScreenName: Pack out
+  labels:
+  - name: Label1
+    xposition: 225
+    yposition: 382
+    width: 206
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: Scanner Data
+    sourceType: Variable
+    textAlign: Left
+  - name: Label1_1
+    description: Part Type
+    xposition: 48
+    yposition: 382
+    width: 155
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: Part Type
+    sourceType: Constant
+    textAlign: Left
+  - name: Label1_10
+    description: Lead Off Station
+    xposition: 37
+    yposition: 25
+    width: 1207
+    height: 54
+    fGColor: Black
+    bGColor: Transparent
+    font: 24
+    source: Lead Off Station
+    sourceType: Constant
+    textAlign: Center
+  - name: Label5
+    description: Time/Date of Scan
+    xposition: 509
+    yposition: 389
+    width: 189
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: Time/Date of Scan
+    sourceType: Constant
+    textAlign: Left
+  - name: Label4
+    xposition: 718
+    yposition: 381
+    width: 217
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: TimeStamp
+    sourceType: Variable
+    textAlign: Left
+  - name: Label3
+    description: Select Operator
+    xposition: 49
+    yposition: 280
+    width: 161
+    height: 30
+    fGColor: Teal
+    bGColor: Silver
+    font: 14
+    source: Select Operator
+    sourceType: Constant
+    textAlign: Left
+  - name: Label2_1
+    description: Select Part Type
+    xposition: 503
+    yposition: 280
+    width: 209
+    height: 30
+    fGColor: Teal
+    bGColor: Silver
+    font: 14
+    source: Select Part Type
+    sourceType: Constant
+    textAlign: Left
+  - name: Label3_2
+    description: Production Count (Good)
+    xposition: 41
+    yposition: 623
+    width: 250
+    height: 20
+    fGColor: SlateGray
+    bGColor: Silver
+    font: 14
+    source: Production Count (Good)
+    sourceType: Constant
+    textAlign: Left
+  - name: Label2_2
+    xposition: 357
+    yposition: 615
+    width: 180
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: GoodPartCount
+    sourceType: Variable
+    textAlign: Left
+  - name: Label1_3
+    description: '-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 33
+    yposition: 215
+    width: 1212
+    height: 30
+    fGColor: Teal
+    bGColor: Silver
+    font: 16
+    source: '-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label2
+    description: '------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 33
+    yposition: 334
+    width: 1200
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 16
+    source: '------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label1_4
+    xposition: 226
+    yposition: 430
+    width: 286
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: MarkDataString
+    sourceType: Variable
+    textAlign: Left
+  - name: Label2_3
+    description: UID Created
+    xposition: 48
+    yposition: 427
+    width: 156
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: UID Created
+    sourceType: Constant
+    textAlign: Left
+  - name: Label1_6
+    description: Defects
+    xposition: 47
+    yposition: 519
+    width: 95
+    height: 17
+    fGColor: DarkGoldenrod
+    bGColor: Silver
+    font: 14
+    source: Defects
+    sourceType: Constant
+    textAlign: Left
+  - name: Label1_7
+    description: Production Count (Defective)
+    xposition: 51
+    yposition: 666
+    width: 280
+    height: 20
+    fGColor: SlateGray
+    bGColor: Silver
+    font: 14
+    source: Production Count (Defective)
+    sourceType: Constant
+    textAlign: Left
+  - name: Label2_5
+    xposition: 358
+    yposition: 656
+    width: 180
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: BadPartCount
+    sourceType: Variable
+    textAlign: Left
+  - name: Label1_2
+    description: powered by
+    xposition: 249
+    yposition: 801
+    width: 81
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 8
+    source: powered by
+    sourceType: Constant
+    textAlign: Left
+  - name: Label1_5
+    description: '------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 25
+    yposition: 472
+    width: 1200
+    height: 20
+    fGColor: DarkGoldenrod
+    bGColor: Silver
+    font: 16
+    source: '------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label1_8
+    description: '------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 25
+    yposition: 581
+    width: 1200
+    height: 20
+    fGColor: SlateGray
+    bGColor: Silver
+    font: 16
+    source: '------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label1_9
+    xposition: 30
+    yposition: 105
+    width: 1200
+    height: 87
+    fGColor: Black
+    bGColor: Aquamarine
+    font: 24
+    source: Status
+    sourceType: Variable
+    textAlign: Left
+  inputs: []
+  images:
+  - name: Image1
+    xposition: 1075
+    yposition: 589
+    width: 137
+    height: 145
+    source: C:\PlantWatchConfig\Images\track-pak logo transparent 30% .png
+    sourceType: Constant
+    refreshOnlyOnNameChange: No
+  - name: Image2
+    xposition: 919
+    yposition: 636
+    width: 144
+    height: 62
+    source: C:\PlantWatchConfig\Images\PlantWatch Logo_vectorformat_031111_transparent 138 by 38.png
+    sourceType: Constant
+    refreshOnlyOnNameChange: No
+  listboxes: []
+  dropdowns:
+  - name: DropDown1
+    xposition: 725
+    yposition: 287
+    width: 4340
+    height: 30
+    fGColor: WindowText
+    bGColor: ControlLightLight
+    font: 14
+    variable: PartNumberArray
+    arrayLength: 2
+    outputVariable: SelectedPartNumber
+  - name: DropDown2
+    xposition: 223
+    yposition: 280
+    width: 4300
+    height: 30
+    fGColor: WindowText
+    bGColor: Window
+    font: 14
+    variable: OperatorArray
+    arrayLength: 10
+    outputVariable: SelectedOperator
+  - name: DropDown2_1
+    xposition: 213
+    yposition: 518
+    width: 9400
+    height: 30
+    fGColor: WindowText
+    bGColor: ControlLightLight
+    font: 14
+    variable: DefectArray
+    arrayLength: 5
+    outputVariable: SelectedDefect
+  webPages: []
+  outputTexts: []
+- name: Pack out
+  backgroundColor: Silver
+  buttons:
+  - name: ChangeFormButton33
+    description: Pack Out
+    xposition: 962
+    yposition: 802
+    width: 2460
+    height: 35
+    fGColor: Black
+    bGColor: White
+    font: 14
+    type: ScreenChange
+    screenChangeScreenName: Pack out
+  - name: ChangeFormButton32
+    description: Inspection
+    xposition: 962
+    yposition: 836
+    width: 2460
+    height: 35
+    fGColor: Black
+    bGColor: White
+    font: 14
+    type: ScreenChange
+    screenChangeScreenName: Inspection
+  - name: ExecuteLogicButton31
+    description: Record Defect
+    xposition: 960
+    yposition: 510
+    width: 3480
+    height: 54
+    fGColor: Black
+    bGColor: LawnGreen
+    font: 14
+    type: ExecuteLogic
+    executeLogicLogicName: RecordDefectButtonLogicChart
+    executeLogicDeviceValueSourceType: Constant
+    executeLogicDeviceValue: 1
+    bGColorVariable: DefectButtonBGColor
+  - name: ExecuteLogicButton30
+    description: Print Label
+    xposition: 960
+    yposition: 264
+    width: 3480
+    height: 54
+    fGColor: Black
+    bGColor: LawnGreen
+    font: 14
+    type: ExecuteLogic
+    executeLogicLogicName: MarkPartButtonLogicChart
+    executeLogicDeviceValueSourceType: Constant
+    executeLogicDeviceValue: 1
+    bGColorVariable: MarkPartButtonBGColor
+  labels:
+  - name: Label59
+    description: Part Status
+    xposition: 541
+    yposition: 429
+    width: 155
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: Part Status
+    sourceType: Constant
+    textAlign: Left
+  - name: Label53
+    xposition: 28
+    yposition: 98
+    width: 1200
+    height: 87
+    fGColor: Black
+    bGColor: Aquamarine
+    font: 24
+    source: Status
+    sourceType: Variable
+    textAlign: Left
+  - name: Label52
+    description: '------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 23
+    yposition: 574
+    width: 1200
+    height: 20
+    fGColor: SlateGray
+    bGColor: Silver
+    font: 16
+    source: '------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label51
+    description: '------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 23
+    yposition: 465
+    width: 1200
+    height: 33
+    fGColor: DarkGoldenrod
+    bGColor: Silver
+    font: 16
+    source: '------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label50
+    description: powered by
+    xposition: 247
+    yposition: 794
+    width: 81
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 8
+    source: powered by
+    sourceType: Constant
+    textAlign: Left
+  - name: Label49
+    xposition: 356
+    yposition: 649
+    width: 180
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: BadPartCount
+    sourceType: Variable
+    textAlign: Left
+  - name: Label48
+    description: Production Count (Defective)
+    xposition: 49
+    yposition: 659
+    width: 280
+    height: 20
+    fGColor: SlateGray
+    bGColor: Silver
+    font: 14
+    source: Production Count (Defective)
+    sourceType: Constant
+    textAlign: Left
+  - name: Label47
+    description: Defects
+    xposition: 45
+    yposition: 512
+    width: 95
+    height: 17
+    fGColor: DarkGoldenrod
+    bGColor: Silver
+    font: 14
+    source: Defects
+    sourceType: Constant
+    textAlign: Left
+  - name: Label46
+    description: UID
+    xposition: 46
+    yposition: 420
+    width: 156
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: UID
+    sourceType: Constant
+    textAlign: Left
+  - name: Label45
+    xposition: 224
+    yposition: 423
+    width: 286
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: MarkDataString
+    sourceType: Variable
+    textAlign: Left
+  - name: Label44
+    description: '------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 31
+    yposition: 327
+    width: 1200
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 16
+    source: '------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label43
+    description: '-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    xposition: 31
+    yposition: 208
+    width: 1212
+    height: 30
+    fGColor: Teal
+    bGColor: Silver
+    font: 16
+    source: '-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    sourceType: Constant
+    textAlign: Left
+  - name: Label42
+    xposition: 355
+    yposition: 608
+    width: 180
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: GoodPartCount
+    sourceType: Variable
+    textAlign: Left
+  - name: Label41
+    description: Production Count (Good)
+    xposition: 39
+    yposition: 616
+    width: 250
+    height: 20
+    fGColor: SlateGray
+    bGColor: Silver
+    font: 14
+    source: Production Count (Good)
+    sourceType: Constant
+    textAlign: Left
+  - name: Label60
+    xposition: 716
+    yposition: 423
+    width: 217
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: Scanner Data
+    sourceType: Variable
+    textAlign: Left
+  - name: Label39
+    description: Select Operator
+    xposition: 47
+    yposition: 273
+    width: 161
+    height: 30
+    fGColor: Teal
+    bGColor: Silver
+    font: 14
+    source: Select Operator
+    sourceType: Constant
+    textAlign: Left
+  - name: Label38
+    xposition: 716
+    yposition: 374
+    width: 217
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: TimeStamp
+    sourceType: Variable
+    textAlign: Left
+  - name: Label37
+    description: Time/Date of Scan
+    xposition: 507
+    yposition: 382
+    width: 189
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: Time/Date of Scan
+    sourceType: Constant
+    textAlign: Left
+  - name: Label36
+    description: Pack-Out Station
+    xposition: 35
+    yposition: 18
+    width: 1207
+    height: 54
+    fGColor: Black
+    bGColor: Transparent
+    font: 24
+    source: Pack-Out Station
+    sourceType: Constant
+    textAlign: Left
+  - name: Label35
+    description: Part Type
+    xposition: 46
+    yposition: 375
+    width: 155
+    height: 20
+    fGColor: SteelBlue
+    bGColor: Silver
+    font: 14
+    source: Part Type
+    sourceType: Constant
+    textAlign: Left
+  - name: Label34
+    xposition: 223
+    yposition: 375
+    width: 206
+    height: 30
+    fGColor: Black
+    bGColor: White
+    font: 14
+    source: Scanner Data
+    sourceType: Variable
+    textAlign: Left
+  inputs: []
+  images:
+  - name: Image55
+    xposition: 917
+    yposition: 629
+    width: 144
+    height: 62
+    source: C:\PlantWatchConfig\Images\PlantWatch Logo_vectorformat_031111_transparent 138 by 38.png
+    sourceType: Constant
+    refreshOnlyOnNameChange: No
+  - name: Image54
+    xposition: 1073
+    yposition: 582
+    width: 137
+    height: 145
+    source: C:\PlantWatchConfig\Images\track-pak logo transparent 30% .png
+    sourceType: Constant
+    refreshOnlyOnNameChange: No
+  listboxes: []
+  dropdowns:
+  - name: DropDown57
+    xposition: 221
+    yposition: 273
+    width: 4300
+    height: 30
+    fGColor: WindowText
+    bGColor: Window
+    font: 14
+    variable: OperatorArray
+    arrayLength: 10
+    outputVariable: SelectedOperator
+  - name: DropDown58
+    xposition: 211
+    yposition: 511
+    width: 9400
+    height: 30
+    fGColor: WindowText
+    bGColor: ControlLightLight
+    font: 14
+    variable: DefectArray
+    arrayLength: 5
+    outputVariable: SelectedDefect
+  webPages: []
+  outputTexts: []

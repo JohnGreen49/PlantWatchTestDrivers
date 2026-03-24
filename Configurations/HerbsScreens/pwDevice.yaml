@@ -1,0 +1,20 @@
+- intervalSeconds: 1
+  bufferVariableName: MarkButtonLogic
+  name: InitializationThread
+  description: Interval Timer Initializatiion
+  deviceType: Interval
+  disabled: false
+- portID: ' 6'
+  baudRate: 19200
+  dataBits: 8
+  parity: n
+  stopBits: 1
+  searchMethodNumberOfCharsUsed: false
+  searchMethodNumberOfChars: 0
+  searchMethodPrefixUsed: false
+  searchMethodSuffixUsed: false
+  portString: 19200,n,8,1
+  name: Scanner Port
+  description: Serial Handheld Scanner Port
+  deviceType: COMPort
+  disabled: true

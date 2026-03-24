@@ -1,0 +1,7 @@
+- name: MyDatabase
+  connectionString: Data Source=localhost\; initial Catalog=PWBase; Trusted_Connection=True;
+  timeout: 2000
+  sQLorODBCType: NativeSQL
+  connectionTestQueryPeriod: 10
+  disabled: No
+  useCommandAndStatusVariables: no

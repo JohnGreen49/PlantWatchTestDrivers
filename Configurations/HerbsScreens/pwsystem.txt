@@ -5,7 +5,5 @@ StartupDelay:
 0
 DoNotReadSecurityDongle:
 
-StartupDelay:
-0
-DoNotReadSecurityDongle:
-
+RemoteClientsEnabled:
+Yes

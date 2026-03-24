@@ -1,0 +1,3 @@
+- name: ABCStation
+  description: Description
+  associatedLine: ABCLine

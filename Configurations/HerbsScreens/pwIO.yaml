@@ -1,0 +1,15 @@
+- disabled: no
+  rackNumber: 1
+  iPAddress: 192.168.1.111
+  readInputsPollRate: 100
+  communicationTimeout: 2000
+  slotTypes:
+  - 8 Dig Ins followed by 8 Dig Outs
+  - Unused
+  - Unused
+  - Unused
+  - Unused
+  - Unused
+  - Unused
+  - Unused
+  mappings: []

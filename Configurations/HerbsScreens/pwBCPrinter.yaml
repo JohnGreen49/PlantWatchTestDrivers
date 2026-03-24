@@ -1,0 +1,8 @@
+- name: Zebra G120 Barcode Printer
+  type: COMPort
+  cOMPortID: ' 4'
+  cOMBaudrate: 9600
+  cOMDataBits: 8
+  cOMParity: '[N]one'
+  cOMStopBits: 1
+  disabled: No

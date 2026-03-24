@@ -1,0 +1,150 @@
+- name: 1
+  description: 1
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: ActiveScreenName
+  description: Name of the screen being displayed to the user
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Array
+  description: 2
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: ArrayMember
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: BadPartCount
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: CAS_1
+  description: Array Member 1
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 2
+  variableType: Local
+- name: DefectArray_1
+  description: Array Member 1
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 2
+  variableType: Local
+- name: DefectArray_10
+  description: Array Member 10
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: DefectArray_4
+  description: Array Member 4
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 5
+  variableType: Local
+- name: DefectArray_7
+  description: Array Member 7
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 8
+  variableType: Local
+- name: ErrorMessageFromSystem
+  description: Last error message
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Garbage
+  description: Garbage variable
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Local
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: MarkButtonTrigger
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: MarkPartButtonBGColor
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: OperatorArray
+  isArray: true
+  dataType: String
+  defaultValue: Array Member 1
+  variableType: Array
+- name: OperatorArray_3
+  description: Array Member 3
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 4
+  variableType: Local
+- name: OperatorArray_6
+  description: Array Member 6
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 7
+  variableType: Local
+- name: OperatorArray_9
+  description: Array Member 9
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 10
+  variableType: Local
+- name: Operator_Array_Count
+  isArray: true
+  dataType: String
+  variableType: Array
+- name: Operator_Count_Array_Joe_2
+  description: Array Member 2
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: PartNumberArray_1
+  description: Array Member 1
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 2
+  variableType: Local
+- name: PartNumberArray_4
+  description: Array Member 4
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 5
+  variableType: Local
+- name: PartNumberArray_7
+  description: Array Member 7
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 8
+  variableType: Local
+- name: Reader Data
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Scanner Data
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Steph_3
+  description: Array Member 3
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 4
+  variableType: Local
+- name: Steph_6
+  description: Array Member 6
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 7
+  variableType: Local
+- name: Steph_9
+  description: Array Member 9
+  isArray: false
+  dataType: String
+  defaultValue: Array Member 10
+  variableType: Local

@@ -1,0 +1,11 @@
+- name: ABCCompany
+  description: EntityDescription
+  addressLine1: EntityAddress
+  addressLine2: EntityAddress2
+  city: EntityCity
+  state: EntityState
+  zip: EntityZip
+  country: EntityName
+- name: HTE
+  state: MI
+  country: USA

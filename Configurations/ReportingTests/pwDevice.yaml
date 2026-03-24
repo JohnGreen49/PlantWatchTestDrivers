@@ -1,0 +1,10 @@
+- intervalSeconds: 1
+  name: PartGenerator
+  deviceType: Interval
+  disabled: false
+- intervalSeconds: 10
+  bufferVariableName: PartCounter
+  name: RatePublisher
+  description: RatePublisher
+  deviceType: Interval
+  disabled: false

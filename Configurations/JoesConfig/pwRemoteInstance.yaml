@@ -1,0 +1,12 @@
+- name: desktvo9li
+  computerName: DESKTOP-CCVO9LI
+  iPAddress: 192.168.1.152
+  mACAddress: B8:CA:3A:7A:45:5A
+  defaultScreen: Pack out
+  heartbeatIntervalSeconds: 0
+  displayWidth: 1280
+  displayHeight: 1024
+  displayOrientation: 0
+  assignedDevices:
+  - Timer Device
+  - Variable Device

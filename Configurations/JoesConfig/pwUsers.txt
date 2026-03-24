@@ -1,8 +1,6 @@
-DefaultDeveloper
-DefaultDeveloper
 0
 Operator
-Setup
+60
 Developer
 
 
@@ -11,10 +9,37 @@ Developer
 
 
 
-DefaultOperator
-DefaultOperator
-0
-Operator
+
+
+Dan
+123
+60
+Admin
+Dev
+LineMgr
+Reader
+Special
+
+
+
+
+
+Herb
+123
+60
+Admin
+Dev
+LineMgr
+Reader
+Special
+
+
+
+
+
+Joe
+123
+60
 
 
 
@@ -24,12 +49,26 @@ Operator
 
 
 
-DefaultSetup
-DefaultSetup
-0
-Setup
+
+John
+123
+60
+Special
+LineMgr
+Reader
 
 
+
+
+
+
+
+johng
+123
+60
+Dev
+LineMgr
+Reader
 
 
 

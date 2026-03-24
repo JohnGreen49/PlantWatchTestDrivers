@@ -1,0 +1,51 @@
+- name: 0
+  password: Operator
+  timeoutPeriod: 60
+  securityLevels:
+  - name: Developer
+- name: Dan
+  password: 123
+  timeoutPeriod: 60
+  securityLevels:
+  - &o0
+    name: Admin
+    description: Administrator
+    inheritsFrom: Dev,LineMgr,Reader,Special
+  - &o1
+    name: Dev
+    description: Developer
+  - &o2
+    name: LineMgr
+    description: Line Manager
+  - &o3
+    name: Reader
+  - &o4
+    name: Special
+    inheritsFrom: LineMgr,Reader
+- name: Herb
+  password: 123
+  timeoutPeriod: 60
+  securityLevels:
+  - *o0
+  - *o1
+  - *o2
+  - *o3
+  - *o4
+- name: Joe
+  password: 123
+  timeoutPeriod: 60
+  securityLevels: []
+- name: John
+  password: 123
+  timeoutPeriod: 60
+  securityLevels:
+  - *o4
+  - *o2
+  - *o3
+- name: johng
+  password: 123
+  timeoutPeriod: 60
+  securityLevels:
+  - *o1
+  - *o2
+  - *o3

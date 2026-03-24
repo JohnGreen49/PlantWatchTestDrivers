@@ -1,0 +1,9 @@
+- name: desktvo9li
+  computerName: DESKTOP-CCVO9LI
+  iPAddress: 192.168.1.152
+  mACAddress: B8:CA:3A:7A:45:5A
+  heartbeatIntervalSeconds: 0
+  displayWidth: 0
+  displayHeight: 0
+  displayOrientation: -1
+  assignedDevices: []

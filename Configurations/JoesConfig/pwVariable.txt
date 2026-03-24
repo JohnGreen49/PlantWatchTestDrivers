@@ -1,5 +1,5 @@
-ArrayMember
-
+ActiveScreenName
+Name of the screen being displayed to the user
 Local
 
 
@@ -9,8 +9,8 @@ Local
 
 
 
-OperatorArray_2
-Array Member 2
+
+
 String
 
 CurrentUID
@@ -28,23 +28,8 @@ Local
 
 String
 
-DefectArray_1
-Array Member 1
-Local
-
-
-
-
-
-
-
-
-
-
-String
-Array Member 2
-DefectArray_10
-Array Member 10
+ErrorMessageFromSystem
+Last error message
 Local
 
 
@@ -58,38 +43,38 @@ Local
 
 String
 
-DefectArray_4
-Array Member 4
-Local
-
-
-
-
-
-
-
-
-
-
-String
-Array Member 5
-DefectArray_7
-Array Member 7
-Local
-
-
-
-
-
-
-
-
-
-
-String
-Array Member 8
 FileOperationStatus
 
+Local
+
+
+
+
+
+
+
+
+
+
+String
+
+FullPartID
+Full Part Identifier
+Local
+
+
+
+
+
+
+
+
+
+
+String
+
+Garbage
+Garbage variable
 Local
 
 
@@ -118,23 +103,8 @@ Local
 
 String
 
-Local
-
-Local
-
-
-
-
-
-
-
-
-SelectedPartNumber
-
-String
-
-MarkButtonTrigger
-
+MSG_UserMessage
+Message to display on the main form.
 Local
 
 
@@ -181,7 +151,7 @@ String
 OperatorArray
 
 Array
-10
+
 
 
 
@@ -193,8 +163,23 @@ Array
 
 String
 Array Member 1
-OperatorArray_3
-Array Member 3
+PartCount
+
+Local
+
+
+
+
+
+
+
+
+
+
+Integer
+
+PartNumber
+
 Local
 
 
@@ -207,82 +192,7 @@ Local
 
 
 String
-Array Member 4
-OperatorArray_6
-Array Member 6
-Local
 
-
-
-
-
-
-
-
-
-
-String
-Array Member 7
-OperatorArray_9
-Array Member 9
-Local
-
-
-
-
-
-
-
-
-
-
-String
-Array Member 10
-PartNumberArray_1
-Array Member 1
-Local
-
-
-
-
-
-
-
-
-
-
-String
-Array Member 2
-PartNumberArray_4
-Array Member 4
-Local
-
-
-
-
-
-
-
-
-
-
-String
-Array Member 5
-PartNumberArray_7
-Array Member 7
-Local
-
-
-
-
-
-
-
-
-
-
-String
-Array Member 8
 Reader Data
 
 Local

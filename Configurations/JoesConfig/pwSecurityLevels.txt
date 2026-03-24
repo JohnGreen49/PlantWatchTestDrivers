@@ -1,8 +1,27 @@
 
 
+>
+Admin
+Administrator
+>Dev,LineMgr,Reader,Special
+Dev
+Developer
+>
 Developer
 
+>
+LineMgr
+Line Manager
+>
 Operator
 
+>
+Reader
+
+>
 Setup
 
+>
+Special
+
+>LineMgr,Reader

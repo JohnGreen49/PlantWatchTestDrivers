@@ -17,3 +17,5 @@ normal
 10
 True
 True
+Arial
+10

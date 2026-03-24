@@ -6,60 +6,215 @@ n
 
 
 
-Cell 0 1
+
 
 Math
 Device
 
 
 
-Constant
+
 
 SetVariableToValue
 Reader Data
 
 
+1
+1
 
 
-
-Cell 0 2
 
 Math
 Constant
-Fixed Mount Reader = 
+Fixed Mount Reader Header
 
 
 Variable
 Reader Data
 Add2StringsToEnd
-Status
+FullPartID
+
+
+1
+1
 
 
 
 
 
-Cell 0 3
 
-If
-Variable
-Garbage
-=
 
-Combo1
-Variable
-Garbage
 
-Cell 0 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HandScanner_Logic_1
+Push Scanner Data to ScannerData
+
+HandScanner
+n
+
+
+
+
 
 Math
-Variable
-GoodPartCount
+Device
 
+
+
+
+
+SetVariableToValue
+Scanner Data
+
+
+1
+1
+
+
+
+ActionConsumeMaterial
+Constant
+_const_PART_OPENER
+Variable
+Scanner Data
+Constant
 
 Constant
+
+False
+
+
+
+
+
+
+
+
+FileManager
+Constant
+_const__const_HTE-PREFIX
+Constant
+DIR_Temp
+Constant
+_const__const_Text
+
+
+
+
+
+
+DirectoryExists
+*.*
+Garbage
+Variable
+Garbage
+Constant
 1
-AddAsNumbers
-GoodPartCount
+Constant
+1
 
 
 
@@ -176,7 +331,7 @@ n
 
 
 
-Cell 0 1
+
 
 If
 Variable
@@ -187,23 +342,23 @@ Combo1
 Constant
 0
 
-Cell 0 2
+
 
 Math
 Constant
+ONE
+
+
+
+
+SetVariableToValue
+Garbage
+
+
+1
 1
 
 
-Constant
-
-SetVariableToValue
-Initialize
-
-
-
-
-
-Cell 0 3
 
 ActionReadFromFile
 Array
@@ -219,23 +374,23 @@ Operators
 Constant
 txt
 
-Cell 0 4
+
 
 ActionReadFromFile
-Array
-PartNumberArray
+
+
 Constant
 1
-AllRecords
+Constant
+1
+Constant
+_const_C:\PlantWatchConfig\SolutionData\Config Files\
+Constant
+_const_PartNumbers
+Constant
+_const_txt
 
-Constant
-C:\PlantWatchConfig\SolutionData\Config Files\
-Constant
-PartNumbers
-Constant
-txt
 
-Cell 0 5
 
 ActionReadFromFile
 Array
@@ -251,7 +406,7 @@ Defects
 Constant
 txt
 
-Cell 0 6
+
 
 Math
 Constant
@@ -267,7 +422,7 @@ Status
 
 
 
-Cell 0 7
+
 
 Math
 Constant
@@ -283,7 +438,7 @@ DefectButtonBGColor
 
 
 
-Cell 0 8
+
 
 Math
 Constant
@@ -299,7 +454,7 @@ GoodPartCount
 
 
 
-Cell 0 9
+
 
 Math
 Constant
@@ -319,43 +474,43 @@ BadPartCount
 
 
 
-Cell 1 1
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -406,89 +561,75 @@ n
 
 
 
-Cell 0 1
+
 
 If
 Constant
-Grey
+COLOR_Grey
 <>
-
-
+ActiveScreenName
+ActiveScreenName
 Variable
 MarkPartButtonBGColor
 
-Cell 0 2
+
 
 If
-Constant
-Part Type Verified
-=
-
-
 Variable
-VerifiedScannedPartNumber
+_TimeStamp
+=
+ActiveScreenName
+ActiveScreenName
+Constant
+ZERO
 
-Cell 0 3
+
 
 Math
 Constant
-Creating Mark Files....
+MSG_CreatingMarkFiles
 
 
-Constant
+
 
 SetVariableToValue
-Status
+MSG_UserMessage
 
 
+1
+1
 
 
-
-Cell 0 4
 
 ActionWriteToFile
 Variable
-MarkDataString
+PartNumber
 No
 Constant
-C:\PlantWatchConfig\SolutionData\MarkFiles\
-Variable
-UID
+DIR_MarkFilesFolder
+Constant
+MarkFileName
 Constant
 .MD
 Yes
 
-Cell 0 5
 
-ActionWriteToFile
-Variable
-MarkDataString
-No
-Constant
-C:\PlantWatchConfig\SolutionData\MarkFiles\
-Variable
-UID
-Constant
-.HR
-Yes
-
-Cell 0 6
 
 FileManager
-Constant
-C:\PlantWatchConfig\SolutionData\MarkFiles\
-Variable
-UID
-Constant
-.HR
-Constant
+
 
 Constant
-
+DIR_MarkFilesFolder
 Constant
+_const__const__const_.HR
+
+
+
+
+
 
 CheckForExistance
-
+*.*
 FileOperationStatus
 Variable
 Garbage
@@ -497,18 +638,18 @@ Constant
 Constant
 1
 
-Cell 0 7
+
 
 If
 Variable
 FileOperationStatus
 =
-
-
+ActiveScreenName
+ActiveScreenName
 Constant
-Pass
+FILE_SUCCESS
 
-Cell 0 8
+
 
 FileManager
 Constant
@@ -533,223 +674,114 @@ Constant
 Constant
 1
 
-Cell 0 9
+
 
 If
 Variable
 FileOperationStatus
 =
-
-
+ActiveScreenName
+ActiveScreenName
 Constant
-Pass
+_const_Pass
 
-Cell 0 10
+
 
 Math
 Constant
-Mark Files Created....
-
-
-Constant
-
-SetVariableToValue
-MessageStringTimed
+_const_Mark Files Created....
 
 
 
 
-
-Cell 1 1
-
-StoredProcedure
-MyDatabase
-usp_InsertItemParts
-3
-0
-SQLResults
-@PartType
-Variable
-Scanner Data
-String
-30
-@ItemID
-Variable
-UID
-String
-30
-@CreateTime
-Variable
-FormattedTimeStamp
-String
-30
-
-Cell 1 2
-
-If
-Variable
-SQLResults
-=
+IncrementAsNumber
+PartCount
 
 
-Constant
-0
-
-Cell 1 3
-
-StoredProcedure
-MyDatabase
-usp_InsertItemEvent
-4
 1
-SQLResults
-@ItemID
-Variable
-UID
-String
-30
-@EventType
-Constant
-Birth
-String
-30
-@Station
-Constant
-Lead-Off
-String
-30
-@EventTime
-Variable
-FormattedTimeStamp
-String
-30
-@ItemEventID
-Numeric
-ItemEventID
-
-Cell 1 4
-
-If
-Variable
-SQLResults
-=
-
-
-Constant
-0
-
-Cell 1 5
-
-StoredProcedure
-MyDatabase
-usp_InsertItemEventAttr
-3
-0
-SQLResults
-@ItemEventID
-Variable
-ItemEventID
-String
-30
-@AttName
-Constant
-Operator
-String
-30
-@AttValue
-Variable
-SelectedOperator
-String
-60
-
-Cell 1 6
-
-If
-Variable
-SQLResults
-=
-
-
-Constant
-0
-
-Cell 1 7
-
-Math
-Constant
-Grey
-
-
-Constant
-
-SetVariableToValue
-MarkPartButtonBGColor
+1
 
 
 
 
 
-Cell 1 8
-
-Math
-Constant
-Scan next Part
-
-
-Constant
-
-SetVariableToValue
-MessageString
 
 
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 RecordDefectButtonLogicChart
@@ -760,7 +792,7 @@ n
 
 
 
-Cell 0 2
+
 
 If
 Variable
@@ -771,7 +803,7 @@ VerifiedScannedPartNumber
 Constant
 Part Type Verified
 
-Cell 0 3
+
 
 If
 Variable
@@ -782,7 +814,7 @@ MarkPartButtonBGColor
 Constant
 LawnGreen
 
-Cell 0 4
+
 
 Math
 Variable
@@ -798,7 +830,7 @@ DefectString
 
 
 
-Cell 0 5
+
 
 If
 Variable
@@ -809,7 +841,7 @@ ItemEventID
 Constant
 0
 
-Cell 0 6
+
 
 If
 Variable
@@ -820,7 +852,7 @@ SelectedDefect
 Constant
 0
 
-Cell 0 7
+
 
 StoredProcedure
 MyDatabase
@@ -844,7 +876,7 @@ SelectedDefect
 String
 60
 
-Cell 0 8
+
 
 ActionWriteToFile
 Variable
@@ -858,7 +890,7 @@ Constant
 txt
 Yes
 
-Cell 0 9
+
 
 Math
 Constant
@@ -874,7 +906,7 @@ DefectButtonBGColor
 
 
 
-Cell 0 10
+
 
 Math
 Constant
@@ -894,39 +926,6 @@ Status
 
 
 
-Cell 1 2
-
-
-
-Cell 1 3
-
-
-
-Cell 1 4
-
-
-
-Cell 1 5
-
-
-
-Cell 1 6
-
-
-
-Cell 1 7
-
-
-
-Cell 1 8
-
-
-
-Cell 1 9
-
-
-
-Cell 1 10
 
 
 
@@ -934,43 +933,76 @@ Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 RxLaserLogic
@@ -981,123 +1013,123 @@ n
 
 
 
-Cell 0 1
 
 
 
-Cell 0 2
 
 
 
-Cell 0 3
 
 
 
-Cell 0 4
 
 
 
-Cell 0 5
 
 
 
-Cell 0 6
 
 
 
-Cell 0 7
 
 
 
-Cell 0 8
 
 
 
-Cell 0 9
 
 
 
-Cell 0 10
 
 
 
-Cell 1 1
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Scanner Logic
@@ -1108,8 +1140,8 @@ n
 
 
 
-Cell 0 1
-Rx Scanner Data
+
+
 Math
 Device
 
@@ -1124,8 +1156,8 @@ Scanner Data
 
 
 
-Cell 0 2
-Rx Scanner Data
+
+
 Math
 Constant
 Grey
@@ -1140,7 +1172,7 @@ MarkPartButtonBGColor
 
 
 
-Cell 0 3
+
 
 Math
 Constant
@@ -1156,7 +1188,7 @@ MessageString
 
 
 
-Cell 0 4
+
 
 If
 Variable
@@ -1167,7 +1199,7 @@ SelectedOperator
 Constant
 0
 
-Cell 0 5
+
 
 Math
 Constant
@@ -1183,7 +1215,7 @@ MessageString
 
 
 
-Cell 0 6
+
 
 If
 Variable
@@ -1194,7 +1226,7 @@ SelectedPartNumber
 Constant
 0
 
-Cell 0 7
+
 
 Math
 Constant
@@ -1210,7 +1242,7 @@ VerifiedScannedPartNumber
 
 
 
-Cell 0 8
+
 
 Math
 Constant
@@ -1226,7 +1258,7 @@ MessageString
 
 
 
-Cell 0 9
+
 
 If
 Variable
@@ -1237,7 +1269,7 @@ SelectedPartNumber
 Variable
 Scanner Data
 
-Cell 0 10
+
 
 Math
 Constant
@@ -1253,7 +1285,7 @@ VerifiedScannedPartNumber
 
 
 
-Cell 1 2
+
 
 Math
 Constant
@@ -1269,7 +1301,7 @@ MarkPartButtonBGColor
 
 
 
-Cell 1 3
+
 
 Math
 Variable
@@ -1285,7 +1317,7 @@ UID
 
 
 
-Cell 1 4
+
 
 Math
 Variable
@@ -1301,7 +1333,7 @@ MarkDataString
 
 
 
-Cell 1 5
+
 
 Math
 Variable
@@ -1317,7 +1349,7 @@ CurrentUID
 
 
 
-Cell 1 6
+
 
 Math
 Constant
@@ -1333,15 +1365,6 @@ MessageString
 
 
 
-Cell 1 7
-
-
-
-Cell 1 8
-
-
-
-Cell 1 9
 
 
 
@@ -1353,39 +1376,48 @@ Cell 1 9
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1400,7 +1432,7 @@ n
 
 
 
-Cell 0 2
+
 
 Math
 Variable
@@ -1416,35 +1448,27 @@ Status
 
 
 
-Cell 0 3
 
 
 
-Cell 0 4
 
 
 
-Cell 0 5
 
 
 
-Cell 0 6
 
 
 
-Cell 0 7
 
 
 
-Cell 0 8
 
 
 
-Cell 0 9
 
 
 
-Cell 0 10
 
 
 
@@ -1452,83 +1476,91 @@ Cell 0 10
 
 
 
-Cell 1 1
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 SelectedDefectTriggerLogicVarable
@@ -1539,7 +1571,7 @@ n
 
 
 
-Cell 0 1
+
 
 Math
 Constant
@@ -1555,7 +1587,7 @@ Status
 
 
 
-Cell 0 2
+
 
 If
 Variable
@@ -1566,7 +1598,7 @@ VerifiedScannedPartNumber
 Constant
 Part Type Verified
 
-Cell 0 3
+
 
 Math
 Constant
@@ -1582,7 +1614,7 @@ DefectButtonBGColor
 
 
 
-Cell 0 4
+
 
 Math
 Variable
@@ -1598,107 +1630,107 @@ DefectString
 
 
 
-Cell 0 5
 
 
 
-Cell 0 6
 
 
 
-Cell 0 7
 
 
 
-Cell 0 8
 
 
 
-Cell 0 9
 
 
 
-Cell 0 10
 
 
 
-Cell 1 1
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 SelectedOperatorTriggerLogic
@@ -1709,7 +1741,7 @@ n
 
 
 
-Cell 0 1
+
 
 Math
 Constant
@@ -1725,7 +1757,7 @@ MessageString
 
 
 
-Cell 0 2
+
 
 Math
 Variable
@@ -1741,115 +1773,115 @@ Status
 
 
 
-Cell 0 3
 
 
 
-Cell 0 4
 
 
 
-Cell 0 5
 
 
 
-Cell 0 6
 
 
 
-Cell 0 7
 
 
 
-Cell 0 8
 
 
 
-Cell 0 9
 
 
 
-Cell 0 10
 
 
 
-Cell 1 1
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 SelectedPartNumberTriggerLogic
@@ -1860,7 +1892,7 @@ n
 
 
 
-Cell 0 1
+
 
 Math
 Constant
@@ -1876,7 +1908,7 @@ MessageString
 
 
 
-Cell 0 2
+
 
 If
 Variable
@@ -1887,7 +1919,7 @@ SelectedOperator
 Constant
  0
 
-Cell 0 3
+
 
 Math
 Constant
@@ -1903,238 +1935,280 @@ MessageString
 
 
 
-Cell 0 4
 
 
 
-Cell 0 5
 
 
 
-Cell 0 6
 
 
 
-Cell 0 7
 
 
 
-Cell 0 8
 
 
 
-Cell 0 9
 
 
 
-Cell 0 10
 
 
 
-Cell 1 1
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
 
 
-TriggerInspectionScannerButtonLogicChart
 
-ABCStation
-GuiLogicChartHolder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Timer Device_Logic_1
+
+
+Timer Device
 n
 
 
 
-Cell 0 1
 
 
+Math
+Device
 
-Cell 0 2
 
 
 
-Cell 0 3
 
+SetVariableToValue
+PartNumber
 
 
-Cell 0 4
+1
+1
 
 
 
-Cell 0 5
+Math
+Variable
+Time
 
 
 
-Cell 0 6
 
+AddStringToEnd
+PartNumber
 
 
-Cell 0 7
+1
+1
 
 
 
-Cell 0 8
+Math
+Constant
+HTE-PREFIX
 
 
 
-Cell 0 9
 
+AddStringToBegining
+PartNumber
 
 
-Cell 0 10
+1
+1
 
 
 
-Cell 1 1
+PublishMqtt
+Constant
+MyTopic
+Variable
+PartNumber
+2
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 UITimedMsgLogicChart
@@ -2145,7 +2219,7 @@ n
 
 
 
-Cell 0 1
+
 
 If
 Variable
@@ -2156,7 +2230,7 @@ MessageStringTimed
 Constant
 0
 
-Cell 0 2
+
 
 Math
 Variable
@@ -2172,7 +2246,7 @@ Status
 
 
 
-Cell 0 3
+
 
 If
 Constant
@@ -2183,7 +2257,7 @@ Constant
 Constant
 4
 
-Cell 0 4
+
 
 Math
 Variable
@@ -2199,7 +2273,7 @@ Status
 
 
 
-Cell 0 5
+
 
 Math
 Variable
@@ -2215,103 +2289,103 @@ UITimer
 
 
 
-Cell 0 6
 
 
 
-Cell 0 7
 
 
 
-Cell 0 8
 
 
 
-Cell 0 9
 
 
 
-Cell 0 10
 
 
 
-Cell 1 1
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 UITimerMsgLogicTimerHitChart
@@ -2322,7 +2396,7 @@ n
 
 
 
-Cell 0 1
+
 
 If
 Variable
@@ -2333,7 +2407,7 @@ UITimer
 Constant
 4
 
-Cell 0 2
+
 
 Math
 Variable
@@ -2349,7 +2423,7 @@ Status
 
 
 
-Cell 0 3
+
 
 Math
 Constant
@@ -2365,7 +2439,7 @@ MessageStringTimed
 
 
 
-Cell 0 4
+
 
 Math
 Constant
@@ -2381,7 +2455,7 @@ MessageHolder
 
 
 
-Cell 0 5
+
 
 Math
 Constant
@@ -2397,103 +2471,103 @@ UITimer
 
 
 
-Cell 0 6
 
 
 
-Cell 0 7
 
 
 
-Cell 0 8
 
 
 
-Cell 0 9
 
 
 
-Cell 0 10
 
 
 
-Cell 1 1
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ZebraComPortLogicChart
@@ -2504,7 +2578,7 @@ n
 
 
 
-Cell 0 1
+
 
 PrintBarcode
 Zebra G120 Barcode Printer
@@ -2535,118 +2609,118 @@ Uppercase Alphanumeric + space , period, comma, dash, and slash
 
 Square
 
-Cell 0 2
 
 
 
-Cell 0 3
 
 
 
-Cell 0 4
 
 
 
-Cell 0 5
 
 
 
-Cell 0 6
 
 
 
-Cell 0 7
 
 
 
-Cell 0 8
 
 
 
-Cell 0 9
 
 
 
-Cell 0 10
 
 
 
-Cell 1 1
 
 
 
-Cell 1 2
 
 
 
-Cell 1 3
 
 
 
-Cell 1 4
 
 
 
-Cell 1 5
 
 
 
-Cell 1 6
 
 
 
-Cell 1 7
 
 
 
-Cell 1 8
 
 
 
-Cell 1 9
 
 
 
-Cell 1 10
 
 
 
-Cell 2 1
 
 
 
-Cell 2 2
 
 
 
-Cell 2 3
 
 
 
-Cell 2 4
 
 
 
-Cell 2 5
 
 
 
-Cell 2 6
 
 
 
-Cell 2 7
 
 
 
-Cell 2 8
 
 
 
-Cell 2 9
 
 
 
-Cell 2 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -1,0 +1,63 @@
+- name: ActiveScreenName
+  description: Name of the screen being displayed to the user
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: CounttDifference
+  isArray: false
+  dataType: Integer
+  defaultValue: 0
+  variableType: Local
+- name: ErrorMessageFromSystem
+  description: Last error message
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Garbage
+  description: Garbage variable
+  isArray: false
+  dataType: String
+  variableType: Local
+- variableType: Constant
+  name: ONE
+  description: 'Constant: 1'
+  isArray: false
+  dataType: Integer
+  defaultValue: 1
+- name: PartCounter
+  isArray: false
+  dataType: Integer
+  variableType: Local
+- variableType: Constant
+  name: PartCounterTopic
+  description: 'Constant: hte/office/line1/partcount'
+  isArray: false
+  dataType: String
+  defaultValue: hte/office/line1/partcount
+- name: PartRate
+  isArray: false
+  dataType: Integer
+  defaultValue: 0
+  variableType: Local
+- variableType: Constant
+  name: PartRateTopic
+  description: 'Constant: hte/office/line1/throughput'
+  isArray: false
+  dataType: String
+  defaultValue: hte/office/line1/throughput
+- name: PreviousPartCount
+  isArray: false
+  dataType: Integer
+  variableType: Local
+- variableType: Constant
+  name: SIX
+  description: 'Constant: 6'
+  isArray: false
+  dataType: Integer
+  defaultValue: 6
+- variableType: Constant
+  name: ZERO
+  description: 'Constant: 0'
+  isArray: false
+  dataType: Integer
+  defaultValue: 0

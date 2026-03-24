@@ -1,0 +1,14 @@
+- {}
+- name: Admin
+  description: Administrator
+  inheritsFrom: Dev,LineMgr,Reader,Special
+- name: Dev
+  description: Developer
+- name: Developer
+- name: LineMgr
+  description: Line Manager
+- name: Operator
+- name: Reader
+- name: Setup
+- name: Special
+  inheritsFrom: LineMgr,Reader

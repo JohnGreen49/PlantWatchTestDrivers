@@ -1,0 +1,27 @@
+- name: DefaultDeveloper
+  password: DefaultDeveloper
+  timeoutPeriod: 0
+  securityLevels:
+  - &o0
+    name: Operator
+  - &o2
+    name: Setup
+  - name: Developer
+  - &o1
+    name: Operator
+  - &o3
+    name: Setup
+  - name: Developer
+- name: DefaultOperator
+  password: DefaultOperator
+  timeoutPeriod: 0
+  securityLevels:
+  - *o0
+  - *o1
+- name: DefaultSetup
+  password: DefaultSetup
+  timeoutPeriod: 0
+  securityLevels:
+  - *o2
+  - *o3
+  - *o1

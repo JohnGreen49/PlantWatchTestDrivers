@@ -1,0 +1,66 @@
+- name: ActiveScreenName
+  description: Name of the screen being displayed to the user
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: CurrentUID
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: ErrorMessageFromSystem
+  description: Last error message
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: FileOperationStatus
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: FullPartID
+  description: Full Part Identifier
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Garbage
+  description: Garbage variable
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: ItemEventID
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: MSG_UserMessage
+  description: Message to display on the main form.
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: MarkPartButtonBGColor
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: MessageStringTimed
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: OperatorArray
+  isArray: true
+  dataType: String
+  defaultValue: Array Member 1
+  variableType: Array
+- name: PartCount
+  isArray: false
+  dataType: Integer
+  variableType: Local
+- name: PartNumber
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Reader Data
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Scanner Data
+  isArray: false
+  dataType: String
+  variableType: Local

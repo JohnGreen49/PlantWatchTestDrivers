@@ -1,0 +1,3 @@
+- name: ABCLocation
+  description: LocationDescription
+  associatedCompany: ABCCompany
