@@ -1,1 +1,7 @@
-[]
+- name: LoclaDB
+  connectionString: Server=JOHNEGREEN4610\SQLEXPRESS;Database=PWBase;Trusted_Connection=true;TrustServerCertificate=true;
+  timeout: 2000
+  sQLorODBCType: NativeSQL
+  connectionTestQueryPeriod: 10
+  disabled: No
+  useCommandAndStatusVariables: yes

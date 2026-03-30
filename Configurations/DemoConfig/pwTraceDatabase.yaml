@@ -1,0 +1,2 @@
+enabled: yes
+connectionString: Data Source=localhost\SQLEXPRESS;initial Catalog=PW;Integrated Security=SSPI

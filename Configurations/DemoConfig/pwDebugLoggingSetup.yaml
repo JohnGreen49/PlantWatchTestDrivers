@@ -1,0 +1,8 @@
+enabled: yes
+keepLogFileOpen: no
+logicChartEnabled: no
+detailedLogicChartEnabled: no
+stackEnabled: no
+deviceEnabled: no
+variableEnabled: no
+logLevel: Debug

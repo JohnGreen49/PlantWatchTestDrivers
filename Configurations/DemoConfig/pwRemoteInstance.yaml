@@ -1,0 +1,82 @@
+- name: trackpac1
+  computerName: TRACK-PAC1
+  iPAddress: 192.168.1.11
+  mACAddress: 84:7B:EB:20:AA:BB
+  defaultScreen: Lead-Off Screen
+  heartbeatIntervalSeconds: 0
+  displayWidth: 1280
+  displayHeight: 960
+  displayOrientation: -1
+  assignedDevices:
+  - InitializationThread
+  - Laser
+  - Leadoff Hand Scanner
+  - MarkPartButton
+  - RecordDefectButton
+  - RecordFailingStatusButton
+  - RecordPassingStatusButton
+  - SelectedDefectTriggerLogic
+  - SelectedOperatorTriggerVariable
+  - SelectedPartNumberTriggerVariable
+  - UITimedMsg
+  assignedScreens:
+  - Lead-Off Screen
+- name: trackpac2
+  computerName: TRACK-PAC2
+  iPAddress: 192.168.1.20
+  mACAddress: EC:F4:BB:12:30:31
+  defaultScreen: Inspection
+  heartbeatIntervalSeconds: 0
+  displayWidth: 1280
+  displayHeight: 960
+  displayOrientation: -1
+  assignedDevices:
+  - FixedMountREader
+  - InitializationThread
+  - RecordDefectButton
+  - RecordFailingStatusButton
+  - RecordPassingStatusButton
+  - SelectedDefectTriggerLogic
+  - SelectedOperatorTriggerVariable
+  - TriggerInspectionButton
+  - UITimedMsg
+  assignedScreens:
+  - Inspection
+- name: trackpac3
+  computerName: TRACKPAC3
+  iPAddress: 192.168.1.30
+  mACAddress: 54:BF:64:84:C2:13
+  defaultScreen: Pack out
+  heartbeatIntervalSeconds: 0
+  displayWidth: 0
+  displayHeight: 0
+  displayOrientation: -1
+  assignedDevices:
+  - InitializationThread
+  - Pack Out Hand Scanner
+  - RecordDefectButton
+  - RecordFailingStatusButton
+  - RecordPassingStatusButton
+  - SelectedDefectTriggerLogic
+  - SelectedOperatorTriggerVariable
+  - UITimedMsg
+  - ZebraPrinterSocket
+  assignedScreens:
+  - Pack out
+- name: trackpac4
+  computerName: TRACKPAC4
+  iPAddress: 192.168.1.40
+  mACAddress: 88:83:5D:B8:AA:C4
+  defaultScreen: Lead-Off Screen
+  heartbeatIntervalSeconds: 0
+  displayWidth: 0
+  displayHeight: 0
+  displayOrientation: -1
+  assignedDevices:
+  - InitializationThread
+  - RecordDefectButton
+  - RecordFailingStatusButton
+  - RecordPassingStatusButton
+  - UITimedMsg
+  assignedScreens:
+  - Lead-Off Screen

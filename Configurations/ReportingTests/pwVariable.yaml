@@ -8,22 +8,53 @@
   dataType: Integer
   defaultValue: 0
   variableType: Local
+- variableType: Constant
+  name: EMPTY
+  description: 'Constant: '
+  isArray: false
+  dataType: String
 - name: ErrorMessageFromSystem
   description: Last error message
   isArray: false
   dataType: String
   variableType: Local
+- variableType: Constant
+  name: FixedScanner_Trigger
+  description: 'Constant: 1'
+  isArray: false
+  dataType: String
+  defaultValue: 1
+- variableType: Constant
+  name: GREATER_THAN
+  description: 'Constant: >'
+  isArray: false
+  dataType: String
+  defaultValue: '>'
 - name: Garbage
   description: Garbage variable
   isArray: false
   dataType: String
   variableType: Local
+- name: ItemID
+  isArray: false
+  dataType: String
+  variableType: Local
 - variableType: Constant
-  name: ONE
-  description: 'Constant: 1'
+  name: LESS_THAN
+  description: 'Constant: <'
+  isArray: false
+  dataType: String
+  defaultValue: <
+- name: ONE
   isArray: false
   dataType: Integer
   defaultValue: 1
+  variableType: Local
+- name: ONE_STRING
+  isArray: false
+  dataType: String
+  defaultValue: 1
+  variableType: Local
 - name: PartCounter
   isArray: false
   dataType: Integer
@@ -38,6 +69,10 @@
   isArray: false
   dataType: Integer
   defaultValue: 0
+  variableType: Local
+- name: PartRateOutput
+  isArray: false
+  dataType: String
   variableType: Local
 - variableType: Constant
   name: PartRateTopic
@@ -55,9 +90,3 @@
   isArray: false
   dataType: Integer
   defaultValue: 6
-- variableType: Constant
-  name: ZERO
-  description: 'Constant: 0'
-  isArray: false
-  dataType: Integer
-  defaultValue: 0

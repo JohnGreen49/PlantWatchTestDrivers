@@ -1,0 +1,37 @@
+Test Screen
+Screens, count is next line
+1
+BLANK
+
+Grey
+Buttons, count is next line
+0
+Labels, count is next line
+1
+Label1
+Temp Screen
+180
+220
+376
+99
+Black
+White
+14
+Temp Screen
+Constant
+
+
+
+Left
+Inputs, count is next line
+0
+Images, count is next line
+0
+Listboxes, count is next line
+0
+Dropdowns, count is next line
+0
+WebPages, count is next line
+0
+OutputTexts, count is next line
+0

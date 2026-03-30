@@ -1,4 +1,30 @@
+- portID: 2001
+  iPAddress: 192.168.1.22
+  searchMethodNumberOfChars: 0
+  useCommandAndStatusVariables: true
+  startCommandVariable: ONE_STRING
+  monitoringIntervalMs: 500
+  connectionTimeoutMs: 5000
+  name: FixedScanner1
+  description: FidexSCanner
+  deviceType: Socket
+  disabled: false
+- portID: 3
+  baudRate: 9600
+  dataBits: 8
+  parity: n
+  stopBits: 1
+  searchMethodNumberOfCharsUsed: false
+  searchMethodNumberOfChars: 0
+  searchMethodPrefixUsed: false
+  searchMethodSuffixUsed: false
+  portString: 9600,n,8,1
+  name: HandScanner
+  description: Hand Scanner
+  deviceType: COMPort
+  disabled: false
 - intervalSeconds: 1
+  bufferVariableName: _GUID
   name: PartGenerator
   deviceType: Interval
   disabled: false
@@ -6,5 +32,10 @@
   bufferVariableName: PartCounter
   name: RatePublisher
   description: RatePublisher
+  deviceType: Interval
+  disabled: false
+- intervalSeconds: 10
+  name: Timer for FixedScanner
+  description: Timer for FixedScanner
   deviceType: Interval
   disabled: false

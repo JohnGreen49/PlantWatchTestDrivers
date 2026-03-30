@@ -14,7 +14,7 @@
       clearLength: 1
   - action:
       actionType: PublishMqtt
-      topicType: Constant
+      topicType: Variable
       topic: PartCounterTopic
       payloadType: Variable
       payload: PartCounter
@@ -56,7 +56,7 @@
       sourceType: Variable
       source: PartRate
       operator: TruncateTo2DecimalPlaces
-      variable: PartRate
+      variable: PartRateOutput
       clearStartIndex: 1
       clearLength: 1
   - action:
@@ -64,5 +64,77 @@
       topicType: Variable
       topic: PartRateTopic
       payloadType: Variable
-      payload: PartRate
+      payload: PartRateOutput
       qualityOfService: 0
+- name: SendPartBirthToDB
+  description: Send the birth of a part event to the DB
+  associatedDeviceName: PartGenerator
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: Math
+      sourceType: Device
+      operator: SetVariableToValue
+      variable: ItemID
+      clearStartIndex: 1
+      clearLength: 1
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: HTE Prefix
+      operator: AddStringToBegining
+      variable: ItemID
+      clearStartIndex: 1
+      clearLength: 1
+  - action:
+      actionType: StoredProcedure
+      databaseConnection: LoclaDB
+      procedureName: dbo.usp_InsertItemParts
+      inputs:
+      - name: '@ItemID'
+        dataSourceType: Variable
+        dataSource: ItemID
+        dataType: String
+        dataLength: 50
+      - name: '@PartType'
+        dataSourceType: Constant
+        dataSource: PART_OPENER
+        dataType: String
+        dataLength: 50
+      results: []
+  - action:
+      actionType: StoredProcedure
+      databaseConnection: LoclaDB
+      procedureName: dbo.usp_InsertItemEvent
+      inputs:
+      - name: '@ItemID'
+        dataSourceType: Variable
+        dataSource: ItemID
+        dataType: String
+        dataLength: 50
+      - name: '@EventType'
+        dataSourceType: Constant
+        dataSource: BIRTH_EVENT
+        dataType: String
+        dataLength: 50
+      - name: '@Station'
+        dataSourceType: Constant
+        dataSource: STATION_ONE
+        dataType: String
+        dataLength: 100
+      results: []
+- name: Timer for FixedScanner_Logic
+  description: Timer for FixedScanner_Logic
+  associatedDeviceName: Timer for FixedScanner
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: ActionWriteToDevice
+      prefixType: Variable
+      prefix: LESS_THAN
+      sourceType: Variable
+      source: FixedScanner_Trigger
+      suffixType: Variable
+      suffix: GREATER_THAN
+      addCrLf: No
+      device: FixedScanner1

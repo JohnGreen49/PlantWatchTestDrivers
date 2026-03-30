@@ -1,0 +1,104 @@
+- portID: 2001
+  iPAddress: 192.168.1.22
+  searchMethodNumberOfChars: 0
+  useCommandAndStatusVariables: false
+  monitoringIntervalMs: 500
+  connectionTimeoutMs: 5000
+  name: FixedMountREader
+  description: TCP|IP Fixed Mount Reader
+  deviceType: Socket
+  disabled: true
+- intervalSeconds: 1
+  name: InitializationThread
+  description: Interval Timer Initializatiion
+  deviceType: Interval
+  disabled: false
+- portID: ' 1'
+  baudRate: 9600
+  dataBits: 8
+  parity: n
+  stopBits: 1
+  searchMethodNumberOfCharsUsed: false
+  searchMethodNumberOfChars: 0
+  searchMethodPrefixUsed: false
+  searchMethodSuffixUsed: false
+  portString: 9600,n,8,1
+  name: Leadoff Hand Scanner
+  description: Serial Handheld Scanner Port
+  deviceType: COMPort
+  disabled: false
+- intervalSeconds: 1
+  name: LeadoffInitialization
+  description: Interval Timer Initializatiion
+  deviceType: Interval
+  disabled: false
+- associatedVariable: PlaceHolder
+  triggerOnChangeToZero: true
+  name: MarkPartButton
+  deviceType: Variable
+  disabled: false
+- portID: ' 1'
+  baudRate: 9600
+  dataBits: 8
+  parity: n
+  stopBits: 1
+  searchMethodNumberOfCharsUsed: false
+  searchMethodNumberOfChars: 0
+  searchMethodPrefixUsed: false
+  searchMethodSuffixUsed: false
+  portString: 9600,n,8,1
+  name: Pack Out Hand Scanner
+  description: Serial Handheld Scanner Port
+  deviceType: COMPort
+  disabled: false
+- associatedVariable: PlaceHolder
+  triggerOnChangeToZero: true
+  name: RecordDefectButton
+  deviceType: Variable
+  disabled: false
+- associatedVariable: PlaceHolder
+  triggerOnChangeToZero: true
+  name: RecordFailingStatusButton
+  deviceType: Variable
+  station: ABCStation
+  disabled: false
+- associatedVariable: PlaceHolder
+  triggerOnChangeToZero: true
+  name: RecordPassingStatusButton
+  deviceType: Variable
+  disabled: false
+- associatedVariable: SelectedDefect
+  triggerOnChangeToZero: false
+  name: SelectedDefectTriggerLogic
+  deviceType: Variable
+  station: ABCStation
+  disabled: false
+- associatedVariable: SelectedOperator
+  triggerOnChangeToZero: false
+  name: SelectedOperatorTriggerVariable
+  deviceType: Variable
+  disabled: false
+- associatedVariable: SelectedPartNumber
+  triggerOnChangeToZero: false
+  name: SelectedPartNumberTriggerVariable
+  deviceType: Variable
+  disabled: false
+- associatedVariable: PlaceHolder
+  triggerOnChangeToZero: false
+  name: TriggerInspectionButton
+  deviceType: Variable
+  disabled: false
+- intervalSeconds: 15
+  name: UITimedMsg
+  deviceType: Interval
+  station: ABCStation
+  disabled: false
+- portID: 9100
+  iPAddress: 192.168.1.77
+  searchMethodNumberOfChars: 0
+  useCommandAndStatusVariables: false
+  monitoringIntervalMs: 500
+  connectionTimeoutMs: 5000
+  name: ZebraPrinterSocket
+  deviceType: Socket
+  disabled: false
