@@ -1,7 +1,0 @@
-no
-Data Source=localhost\SQLEXPRESS;initial Catalog=PW;Integrated Security=SSPI
-
-
-
-
-

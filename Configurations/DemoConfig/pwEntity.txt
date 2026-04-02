@@ -1,8 +1,0 @@
-ABCCompany
-EntityDescription
-EntityAddress
-EntityAddress2
-EntityCity
-EntityState
-EntityZip
-EntityName

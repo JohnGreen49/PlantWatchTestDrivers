@@ -1,3 +1,0 @@
-ABCLine
-LineDescription
-ABCPlant
