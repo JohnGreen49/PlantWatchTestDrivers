@@ -132,30 +132,15 @@
 - name: InitializationThreadLogix
   station: ABCStation
   associatedDeviceName: InitializationThread
-  triggerMode: OnEvent
+  triggerMode: OnStart
   controlCharsEnabled: false
   steps:
-  - action:
-      actionType: If
-      sourceType: Variable
-      source: Initialize
-      compareOperator: =
-      containsInstanceCountVariable: Combo1
-      comparedToType: Constant
-      comparedTo: 0
-  - action:
-      actionType: Math
-      sourceType: Constant
-      source: 1
-      source2Type: Constant
-      operator: SetVariableToValue
-      variable: Initialize
   - action:
       actionType: ActionReadFromFile
       resultVariableType: Array
       resultVariable: OperatorArray
-      fileSpecPathType: Constant
-      fileSpecPath: C:\PlantWatchConfig\SolutionData\Config Files\
+      fileSpecPathType: Variable
+      fileSpecPath: PW_ConfigFolder
       fileSpecFilenameType: Constant
       fileSpecFilename: Operators
       fileSpecFileExtensionType: Constant
@@ -164,8 +149,8 @@
       actionType: ActionReadFromFile
       resultVariableType: Array
       resultVariable: PartNumberArray
-      fileSpecPathType: Constant
-      fileSpecPath: C:\PlantWatchConfig\SolutionData\Config Files\
+      fileSpecPathType: Variable
+      fileSpecPath: PW_ConfigFolder
       fileSpecFilenameType: Constant
       fileSpecFilename: PartNumbers
       fileSpecFileExtensionType: Constant
@@ -174,8 +159,8 @@
       actionType: ActionReadFromFile
       resultVariableType: Array
       resultVariable: DefectArray
-      fileSpecPathType: Constant
-      fileSpecPath: C:\PlantWatchConfig\SolutionData\Config Files\
+      fileSpecPathType: Variable
+      fileSpecPath: PW_ConfigFolder
       fileSpecFilenameType: Constant
       fileSpecFilename: Defects
       fileSpecFileExtensionType: Constant
@@ -184,30 +169,18 @@
       actionType: Math
       sourceType: Constant
       source: Select an Operator
-      source2Type: Constant
       operator: SetVariableToValue
       variable: Status
+      clearStartIndex: 1
+      clearLength: 1
   - action:
       actionType: Math
       sourceType: Constant
       source: Grey
-      source2Type: Constant
       operator: SetVariableToValue
       variable: DefectButtonBGColor
-  - action:
-      actionType: Math
-      sourceType: Constant
-      source: 0
-      source2Type: Constant
-      operator: SetVariableToValue
-      variable: GoodPartCount
-  - action:
-      actionType: Math
-      sourceType: Constant
-      source: 0
-      source2Type: Constant
-      operator: SetVariableToValue
-      variable: BadPartCount
+      clearStartIndex: 1
+      clearLength: 1
 - name: Leadoff Hand Scanner Part 1
   station: ABCStation
   associatedDeviceName: Leadoff Hand Scanner
@@ -342,7 +315,7 @@
       variable: Status
 - name: MarkPartButtonLogicChart
   station: ABCStation
-  associatedDeviceName: MarkPartButton
+  associatedDeviceName: Screen:Lead-Off Screen/CreatUID
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -393,16 +366,14 @@
       addCrLf: Yes
   - action:
       actionType: FileManager
-      sourcePrefixType: Constant
-      sourcePrefix: C:\PlantWatchConfig\SolutionData\MarkFiles\
+      sourcePrefixType: Variable
+      sourcePrefix: MARKFILE_FOLDER
       sourceType: Variable
       source: UID
       sourceSuffixType: Constant
       sourceSuffix: .HR
-      destPrefixType: Constant
-      destType: Constant
-      destSuffixType: Constant
       operator: CheckForExistance
+      dirSearchPattern: '*.*'
       statusVariable: FileOperationStatus
       resultVariableType: Variable
       resultVariable: Garbage
@@ -419,16 +390,14 @@
       comparedTo: Pass
   - action:
       actionType: FileManager
-      sourcePrefixType: Constant
-      sourcePrefix: C:\PlantWatchConfig\SolutionData\MarkFiles\
+      sourcePrefixType: Variable
+      sourcePrefix: MARKFILE_FOLDER
       sourceType: Variable
       source: UID
       sourceSuffixType: Constant
       sourceSuffix: .MD
-      destPrefixType: Constant
-      destType: Constant
-      destSuffixType: Constant
       operator: CheckForExistance
+      dirSearchPattern: '*.*'
       statusVariable: FileOperationStatus
       resultVariableType: Variable
       resultVariable: Garbage
@@ -452,7 +421,7 @@
       variable: MessageStringTimed
   - action:
       actionType: StoredProcedure
-      databaseConnection: MyDatabase
+      databaseConnection: HTE_DEMO1
       procedureName: usp_InsertItemParts
       status: SQLResults
       inputs:
@@ -481,7 +450,7 @@
       comparedTo: 0
   - action:
       actionType: StoredProcedure
-      databaseConnection: MyDatabase
+      databaseConnection: HTE_DEMO1
       procedureName: usp_InsertItemEvent
       status: SQLResults
       inputs:
@@ -519,7 +488,7 @@
       comparedTo: 0
   - action:
       actionType: StoredProcedure
-      databaseConnection: MyDatabase
+      databaseConnection: HTE_DEMO1
       procedureName: usp_InsertItemEventAttr
       status: SQLResults
       inputs:
@@ -562,7 +531,7 @@
       variable: MessageString
 - name: MarkPartButtonLogicChart2
   station: ABCStation
-  associatedDeviceName: MarkPartButton
+  associatedDeviceName: Screen:Lead-Off Screen/CreatUID
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -573,9 +542,128 @@
       source2Type: Constant
       operator: SetVariableToValue
       variable: Status
-- name: RecodeDefecttButtonLogicChart2
+- name: Packout Hand Scanner Part 1
   station: ABCStation
-  associatedDeviceName: RecordDefectButton
+  associatedDeviceName: Packout Hand Scanner
+  triggerMode: OnEvent
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: Math
+      sourceType: Device
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Scanner Data
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Grey
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkPartButtonBGColor
+      clearStartIndex: 1
+      clearLength: 1
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: You must select an Operator
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MessageString
+  - action:
+      actionType: If
+      sourceType: Variable
+      source: SelectedOperator
+      compareOperator: <>
+      comparedToType: Constant
+      comparedTo: 0
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: You must select an Part Type
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MessageString
+  - action:
+      actionType: If
+      sourceType: Variable
+      source: SelectedPartNumber
+      compareOperator: <>
+      comparedToType: Constant
+      comparedTo: 0
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Not Verified
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: VerifiedScannedPartNumber
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Selected Part does not match Scanned Part
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MessageString
+  - action:
+      actionType: If
+      sourceType: Variable
+      source: SelectedPartNumber
+      compareOperator: =
+      comparedToType: Variable
+      comparedTo: Scanner Data
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Part Type Verified
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: VerifiedScannedPartNumber
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: LawnGreen
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkPartButtonBGColor
+  - action:
+      actionType: Math
+      sourceType: Variable
+      source: TimeStamp
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: UID
+  - action:
+      actionType: Math
+      sourceType: Variable
+      source: UID
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MarkDataString
+  - action:
+      actionType: Math
+      sourceType: Variable
+      source: UID
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: CurrentUID
+  - action:
+      actionType: Math
+      sourceType: Constant
+      source: Press Create UID Button
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: MessageString
+  - action:
+      actionType: If
+      sourceType: Variable
+      source: ActiveScreenName
+      compareOperator: <>
+      comparedToType: Constant
+      comparedTo: Lead-OffStation
+- name: Packout Hand Scanner Part2
+  station: ABCStation
+  associatedDeviceName: Packout Hand Scanner
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -588,15 +676,16 @@
       variable: Status
 - name: RecordDefectButtonLogicChart
   station: ABCStation
-  associatedDeviceName: RecordDefectButton
+  associatedDeviceName: Screen:Inspection/RecordDefect
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
   - action:
       actionType: If
-      sourceType: Variable
-      source: VerifiedScannedPartNumber
+      sourceType: Control
       compareOperator: =
+      containsStartPositionVariable: ActiveScreenName
+      containsInstanceCountVariable: ActiveScreenName
       comparedToType: Constant
       comparedTo: Part Type Verified
   - action:
@@ -613,6 +702,8 @@
       source2Type: Constant
       operator: SetVariableToValue
       variable: DefectString
+      clearStartIndex: 1
+      clearLength: 1
   - action:
       actionType: If
       sourceType: Variable
@@ -675,9 +766,23 @@
       source2Type: Constant
       operator: SetVariableToValue
       variable: Status
+- name: RecordDefectButtonLogicChart2
+  station: ABCStation
+  associatedDeviceName: Screen:Inspection/RecordDefect
+  triggerMode: OnEvent
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: Math
+      sourceType: Variable
+      source: MessageString
+      operator: SetVariableToValue
+      variable: Status
+      clearStartIndex: 1
+      clearLength: 1
 - name: RecordFailingStatusButton
   station: ABCStation
-  associatedDeviceName: RecordFailingStatusButton
+  associatedDeviceName: Screen:Inspection/DefectType
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -777,9 +882,9 @@
       source2Type: Constant
       operator: SetVariableToValue
       variable: FailingButtonBGColor
-- name: RecordFailingStatustButtonLogicChart2
+- name: RecordFailingStatusButton2
   station: ABCStation
-  associatedDeviceName: RecordFailingStatusButton
+  associatedDeviceName: Screen:Inspection/DefectType
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -790,22 +895,9 @@
       source2Type: Constant
       operator: SetVariableToValue
       variable: Status
-- name: RecordPassingStatustButtonLogicChart2
+- name: RecordPassingStatusButton
   station: ABCStation
-  associatedDeviceName: RecordPassingStatusButton
-  triggerMode: OnEvent
-  controlCharsEnabled: false
-  steps:
-  - action:
-      actionType: Math
-      sourceType: Variable
-      source: MessageString
-      source2Type: Constant
-      operator: SetVariableToValue
-      variable: Status
-- name: RecordPassngStatusButton
-  station: ABCStation
-  associatedDeviceName: RecordPassingStatusButton
+  associatedDeviceName: Screen:Inspection/RecordPass
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -905,9 +997,22 @@
       source2Type: Constant
       operator: SetVariableToValue
       variable: FailingButtonBGColor
+- name: RecordPassingStatusButton2
+  station: ABCStation
+  associatedDeviceName: Screen:Inspection/RecordPass
+  triggerMode: OnEvent
+  controlCharsEnabled: false
+  steps:
+  - action:
+      actionType: Math
+      sourceType: Variable
+      source: MessageString
+      source2Type: Constant
+      operator: SetVariableToValue
+      variable: Status
 - name: SelectedDefectTriggerLogicVarable
   station: ABCStation
-  associatedDeviceName: SelectedDefectTriggerLogic
+  associatedDeviceName: Screen:Inspection/DefectType
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -915,14 +1020,17 @@
       actionType: Math
       sourceType: Constant
       source: ' Part Type Needs to be Selected'
-      source2Type: Constant
       operator: SetVariableToValue
       variable: Status
+      clearStartIndex: 1
+      clearLength: 1
   - action:
       actionType: If
       sourceType: Variable
       source: VerifiedScannedPartNumber
       compareOperator: =
+      containsStartPositionVariable: ActiveScreenName
+      containsInstanceCountVariable: ActiveScreenName
       comparedToType: Constant
       comparedTo: Part Type Verified
   - action:
@@ -941,7 +1049,7 @@
       variable: DefectString
 - name: SelectedOperatorTriggerLogic
   station: ABCStation
-  associatedDeviceName: SelectedOperatorTriggerVariable
+  associatedDeviceName: Screen:Lead-Off Screen/Operator
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -968,7 +1076,7 @@
       variable: MessageString
 - name: SelectedOperatorTriggerLogic2
   station: ABCStation
-  associatedDeviceName: SelectedOperatorTriggerVariable
+  associatedDeviceName: Screen:Lead-Off Screen/Operator
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -981,7 +1089,7 @@
       variable: Status
 - name: SelectedPartNumberTriggerLogic
   station: ABCStation
-  associatedDeviceName: SelectedPartNumberTriggerVariable
+  associatedDeviceName: Screen:Lead-Off Screen/PartType
   triggerMode: OnEvent
   controlCharsEnabled: false
   steps:
@@ -1006,24 +1114,42 @@
       source2Type: Constant
       operator: SetVariableToValue
       variable: MessageString
-- name: TriggerInsectiontButtonLogicChart2
-  station: ABCStation
-  associatedDeviceName: TriggerInspectionButton
+- name: TriggerFixedScanner
+  associatedDeviceName: Screen:Inspection/TriggerScan
   triggerMode: OnEvent
-  controlCharsEnabled: false
+  controlCharsEnabled: true
+  controlCharsPrefix: <
+  controlCharsSuffix: '>'
   steps:
   - action:
-      actionType: Math
+      actionType: ActionWriteToDevice
+      prefixType: Variable
+      prefix: LESS_THAN
       sourceType: Variable
-      source: MessageString
-      source2Type: Constant
-      operator: SetVariableToValue
-      variable: Status
-- name: TriggerInspectionScannerButtonLogicChart
-  station: ABCStation
-  associatedDeviceName: TriggerInspectionButton
-  triggerMode: OnEvent
-  controlCharsEnabled: false
+      source: ONE
+      suffixType: Variable
+      suffix: GREATER_THAN
+      addCrLf: No
+      device: FixedMountREader
+  - action:
+      actionType: StoredProcedure
+      databaseConnection: HTE_DEMO1
+      procedureName: dbo.usp_InsertItemEvent
+      inputs:
+      - name: '@ItemID'
+        dataSourceType: Variable
+        dataSource: UID
+        dataType: String
+        dataLength: 50
+      - name: '@EventType'
+        dataSourceType: Variable
+        dataType: String
+        dataLength: 50
+      - name: '@Station'
+        dataSourceType: Variable
+        dataType: String
+        dataLength: 100
+      results: []
 - name: UITimedMsgLogicChart
   station: ABCStation
   associatedDeviceName: UITimedMsg

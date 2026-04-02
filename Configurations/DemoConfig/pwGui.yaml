@@ -3,7 +3,7 @@ screens:
 - name: Inspection
   backgroundColor: Silver
   buttons:
-  - name: ExecuteLogicButton2
+  - name: RecordDefect
     description: Record Defect
     xposition: 957
     yposition: 516
@@ -17,7 +17,7 @@ screens:
     executeLogicDeviceValueSourceType: Constant
     executeLogicDeviceValue: 1
     bGColorVariable: FailingButtonBGColor
-  - name: ExecuteLogicButton1
+  - name: TriggerScan
     description: Trigger Scanner
     xposition: 957
     yposition: 373
@@ -31,7 +31,7 @@ screens:
     executeLogicDeviceValueSourceType: Constant
     executeLogicDeviceValue: 1
     bGColorVariable: MarkPartButtonBGColor
-  - name: ExecuteLogicButton1_1
+  - name: RecordPass
     description: Record Passing
     xposition: 747
     yposition: 516
@@ -270,7 +270,7 @@ screens:
     refreshOnlyOnNameChange: No
   listboxes: []
   dropdowns:
-  - name: DropDown29
+  - name: DefectType
     xposition: 208
     yposition: 517
     width: 9400
@@ -281,7 +281,7 @@ screens:
     variable: DefectArray
     arrayLength: 5
     outputVariable: DisplayPartNumber
-  - name: DropDown2
+  - name: Operator
     xposition: 228
     yposition: 280
     width: 5460
@@ -308,7 +308,7 @@ screens:
 - name: Lead-Off Screen
   backgroundColor: Silver
   buttons:
-  - name: ExecuteLogicButton3
+  - name: CreatUID
     description: Create UID
     xposition: 960
     yposition: 276
@@ -322,10 +322,10 @@ screens:
     executeLogicDeviceValueSourceType: Constant
     executeLogicDeviceValue: 1
     bGColorVariable: MarkPartButtonBGColor
-  - name: ExecuteLogicButton1_1
+  - name: RecordDefect
     description: Record Defect
-    xposition: 962
-    yposition: 517
+    xposition: 969
+    yposition: 520
     width: 3480
     height: 54
     fGColor: Black
@@ -573,7 +573,7 @@ screens:
     refreshOnlyOnNameChange: No
   listboxes: []
   dropdowns:
-  - name: DropDown1
+  - name: PartType
     xposition: 725
     yposition: 287
     width: 4340
@@ -584,7 +584,7 @@ screens:
     variable: PartNumberArray
     arrayLength: 2
     outputVariable: SelectedPartNumber
-  - name: DropDown2
+  - name: Operator
     xposition: 223
     yposition: 280
     width: 4300
@@ -595,7 +595,7 @@ screens:
     variable: OperatorArray
     arrayLength: 10
     outputVariable: SelectedOperator
-  - name: DropDown2_1
+  - name: DefectType
     xposition: 213
     yposition: 518
     width: 9400
@@ -625,7 +625,7 @@ screens:
     executeLogicDeviceValueSourceType: Constant
     executeLogicDeviceValue: 1
     bGColorVariable: DefectButtonBGColor
-  - name: ExecuteLogicButton30
+  - name: PrintLbl
     description: Print Label
     xposition: 960
     yposition: 264
@@ -660,8 +660,7 @@ screens:
     fGColor: Black
     bGColor: Aquamarine
     font: 24
-    source: Status
-    sourceType: Variable
+    sourceType: Constant
     textAlign: Left
   - name: Label52
     description: '------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
@@ -695,8 +694,7 @@ screens:
     fGColor: Black
     bGColor: White
     font: 14
-    source: BadPartCount
-    sourceType: Variable
+    sourceType: Constant
     textAlign: Left
   - name: Label48
     description: Production Count (Defective)
@@ -742,8 +740,7 @@ screens:
     fGColor: Black
     bGColor: White
     font: 14
-    source: MarkDataString
-    sourceType: Variable
+    sourceType: Constant
     textAlign: Left
   - name: Label44
     description: '------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
@@ -777,8 +774,7 @@ screens:
     fGColor: Black
     bGColor: White
     font: 14
-    source: GoodPartCount
-    sourceType: Variable
+    sourceType: Constant
     textAlign: Left
   - name: Label41
     description: Production Count (Good)
@@ -800,8 +796,7 @@ screens:
     fGColor: Black
     bGColor: White
     font: 14
-    source: Scanner Data
-    sourceType: Variable
+    sourceType: Constant
     textAlign: Left
   - name: Label39
     description: Select Operator
@@ -823,8 +818,7 @@ screens:
     fGColor: Black
     bGColor: White
     font: 14
-    source: TimeStamp
-    sourceType: Variable
+    sourceType: Constant
     textAlign: Left
   - name: Label37
     description: Time/Date of Scan
@@ -870,8 +864,7 @@ screens:
     fGColor: Black
     bGColor: White
     font: 14
-    source: Scanner Data
-    sourceType: Variable
+    sourceType: Constant
     textAlign: Left
   inputs: []
   images:
@@ -893,7 +886,7 @@ screens:
     refreshOnlyOnNameChange: No
   listboxes: []
   dropdowns:
-  - name: DropDown58
+  - name: Defect
     xposition: 211
     yposition: 511
     width: 9400
@@ -904,5 +897,14 @@ screens:
     variable: DefectArray
     arrayLength: 5
     outputVariable: SelectedDefect
+  - name: Operator
+    xposition: 222
+    yposition: 267
+    width: 6060
+    height: 30
+    fGColor: WindowText
+    bGColor: Window
+    font: 14
+    arrayLength: 1
   webPages: []
   outputTexts: []

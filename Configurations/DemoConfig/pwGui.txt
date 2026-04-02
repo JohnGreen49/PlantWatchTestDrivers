@@ -1,842 +1,464 @@
-
+Lead-Off Screen
 Screens, count is next line
-4
-Johns Screem
+3
+Inspection
 
-Yellow
+Silver
 Buttons, count is next line
-0
-Labels, count is next line
-1
-Label3
-Label1
-144
-92
-60
-20
+3
+RecordDefect
+Record Defect
+957
+516
+3480
+54
 Black
-White
+Crimson
 14
+ExecuteLogic
 
-Variable
-
-
-
-Left
-Inputs, count is next line
-1
-ScannerData
-
-234
-94
-212
-20
-Black
-White
-14
-
-
-
-
-Images, count is next line
-1
-Image1
-
-91
-300
-100
-50
-
+RecordFailingStatusButton
 Constant
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-False
-Listboxes, count is next line
-2
-VariableList2
-
-273
-166
-188
-95
-WindowText
-Window
-14
-
 1
 
 
 
-VariableList3
 
-95
-153
-120
-96
-WindowText
-Window
-14
-
-1
+FailingButtonBGColor
 
 
-
-Dropdowns, count is next line
-0
-WebPages, count is next line
-0
-Main
-
+TriggerScan
+Trigger Scanner
+957
+373
+3480
+54
 Black
-Buttons, count is next line
-6
-ChangeFormButton6
-Maintenance
-8
-232
-3160
-35
-Black
-DarkTurquoise
+LawnGreen
 14
-ScreenChange
-Maintenance
+ExecuteLogic
 
+TriggerInspectionScannerButtonLogicChart
+Constant
 
-
-
-
-
-
-
-
-
-
-SetToValueButton4
-Blue Lamp
-300
-39
-3500
-35
-White
-Blue
-18
-SetToValue
-
-
-
-
-
-Set_Blue
 1
 
 
 
 
-
-SetToValueButton2
-Red Lamp
-300
-234
-3500
-35
-White
-Red
-18
-SetToValue
+MarkPartButtonBGColor
 
 
+RecordPass
+Record Passing
+747
+516
+3480
+54
+Black
+LawnGreen
+14
+ExecuteLogic
 
+RecordPassingStatusButton
+Constant
 
-
-Set_Red
 1
 
 
 
 
+PassingButtonBGColor
 
-SetToValueButton3
-Green Lamp
-300
-169
-3500
-35
-White
-Green
+
+Labels, count is next line
 18
-SetToValue
+Label24
 
-
-
-
-
-Set_Green
-1
-
-
-
-
-
-SetToValueButton5
-Yellow Lamp
-300
+25
 104
-3500
-35
-White
-Olive
-18
-SetToValue
-
-
-
-
-
-Set_Yellow
-1
-
-
-
-
-
-SetToValueButton2_1
-MANUAL SEND
-11
-385
-4040
-35
-White
-Navy
-14
-SetToValue
-
-
-
-
-
-Send_Button
-1
-
-
-
-
-
-Labels, count is next line
-10
-Label1
-<Y00000000>
-803
-444
-164
+1200
+87
+Black
+Aquamarine
 24
-White
+
+Constant
+
+
+
+Left
+Label23
+------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+20
+580
+1200
+20
+SlateGray
+Silver
+16
+------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label22
+------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+20
+471
+1200
+25
+DarkGoldenrod
+Silver
+16
+------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label20
+
+353
+655
+180
+30
 Black
+White
 14
-Raw_Data
-Variable
+
+Constant
 
 
 
 Left
-Label2
-PLC Response:
-646
-443
-154
-23
-White
+Label19
+Production Count (Defective)
+46
+665
+280
+20
+SlateGray
+Silver
+14
+Production Count (Defective)
+Constant
+
+
+
+Left
+Label18
+Defects
+42
+518
+95
+17
+DarkGoldenrod
+Silver
+14
+Defects
+Constant
+
+
+
+Left
+Label17
+Part UID
+43
+426
+156
+20
+SteelBlue
+Silver
+14
+Part UID
+Constant
+
+
+
+Left
+Label16
+
+221
+429
+286
+30
 Black
+White
 14
-PLC Response:
+
 Constant
 
 
 
 Left
-Label1_1
-Input X0
-815
-12
-115
+Label15
+------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+28
+333
+1200
 20
-White
-Transparent
-14
-Input X0
+SteelBlue
+Silver
+16
+------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Constant
 
 
 
 Left
-Label1_2
-Input X1
-815
-62
-90
-20
-White
-Transparent
-14
-Input X1
+Label14
+-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+28
+214
+1212
+30
+Teal
+Silver
+16
+-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Constant
 
 
 
 Left
-Label2_1
-Input X2
-815
-112
-90
-20
+Label13
+
+352
+614
+180
+30
+Black
 White
-Transparent
 14
-Input X2
+
 Constant
 
 
 
 Left
-Label3
-Input X3
-815
-162
-90
+Label12
+Production Count (Good)
+36
+622
+250
 20
-White
-Transparent
+SlateGray
+Silver
 14
-Input X3
+Production Count (Good)
 Constant
 
 
 
 Left
-Label4
-Input X4
-815
-212
-90
-20
-White
-Transparent
+Label10
+Select Operator
+44
+279
+161
+30
+Teal
+Silver
 14
-Input X4
+Select Operator
 Constant
 
 
 
 Left
-Label5
-Input X5
-815
-262
-90
-20
+Label9
+
+713
+380
+217
+30
+Black
 White
-Transparent
 14
-Input X5
+
 Constant
 
 
 
 Left
-Label6
-Input X6
-815
-312
-90
+Label8
+Time/Date of Scan
+504
+388
+189
 20
-White
-Transparent
+SteelBlue
+Silver
 14
-Input X6
+Time/Date of Scan
 Constant
 
 
 
 Left
 Label7
-Input X7
-815
-362
-90
-21
-White
-Transparent
-14
-Input X7
-Constant
-
-
-
-Left
-Inputs, count is next line
-1
-TextBox1
-00000000
-222
-393
-2340
-35
-Black
-White
-18
-Output_Data
-
-
-
-Images, count is next line
-14
-Image1
-Blue_Field
-501
-14
-125
-75
-Blue_Field
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yes
-Image1_1
-
-10
-17
-157
-161
-C:\PlantWatchConfig\Images\track-pak logo 30%.jpg
-Constant
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No
-Image1_2
-Input_1
-682
-8
-123
-33
-Input_1
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No
-Image1_3
-Input_2
-682
-58
-123
-33
-Input_2
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No
-Image2
-Input_3
-682
-108
-123
-33
-Input_3
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No
-Image2_1
-Input_4
-682
-158
-123
-33
-Input_4
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No
-Image3
-Input_5
-682
-208
-123
-33
-Input_5
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No
-Image4
-Input_6
-682
-258
-123
-33
-Input_6
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No
-Image5
-Input_7
-682
-308
-123
-33
-Input_7
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No
-Image6
-Input_8
-682
-358
-123
-33
-Input_8
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No
-Image1_4
-Yellow_Field
-501
-89
-125
-75
-Yellow_Field
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yes
-Image1_5
-Green_Field
-501
-164
-125
-75
-Green_Field
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yes
-Image2_2
-Red_Field
-501
-239
-125
-75
-Red_Field
-Variable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yes
-Image1_6
-Red_Field
-530
-315
-67
-154
-C:\PlantWatchConfig\Images\Stand.jpg
-Constant
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yes
-Listboxes, count is next line
-0
-Dropdowns, count is next line
-0
-WebPages, count is next line
-0
-Maintenance
-
-Color [A=255, R=64, G=128, B=128]
-Buttons, count is next line
-1
-ChangeFormButton1
-MAIN
-381
-461
-2460
-35
-White
-Blue
-14
-ScreenChange
-Main
-
-
-
-
-
-
-
-
-
-
-
-Labels, count is next line
-1
-Label2
-PLC Inputs:
-182
-166
-194
-43
-Black
-Teal
+Inspection Station
+514
 24
-PLC Inputs:
+299
+54
+Black
+Transparent
+24
+Inspection Station
+Constant
+
+
+
+Left
+Label6
+Part Type
+43
+381
+155
+20
+SteelBlue
+Silver
+14
+Part Type
+Constant
+
+
+
+Left
+Label5
+
+220
+381
+206
+30
+Black
+White
+14
+
 Constant
 
 
 
 Left
 Inputs, count is next line
-1
-TextBox3
-12345678
-379
-173
-3080
-32
-Black
-White
-16
-Raw_Data
-
-
-
-Images, count is next line
 0
+Images, count is next line
+2
+Image26
+
+914
+635
+144
+62
+C:\PlantWatchConfig\Images\PlantWatch Logo_vectorformat_031111_transparent 138 by 38.png
+Constant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No
+Image25
+
+1070
+588
+137
+145
+C:\PlantWatchConfig\Images\track-pak logo transparent 30% .png
+Constant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No
 Listboxes, count is next line
 0
 Dropdowns, count is next line
-0
+2
+DefectType
+
+208
+517
+9400
+30
+WindowText
+ControlLightLight
+14
+DefectArray
+5
+DisplayPartNumber
+
+
+
+Operator
+
+228
+280
+5460
+30
+WindowText
+ControlLightLight
+14
+OperatorArray
+10
+SelectedOperator
+
+
+
 WebPages, count is next line
 0
-Test Screen
+OutputTexts, count is next line
+1
+OutputText1
+${ReaderData}
+534
+280
+687
+34
+Black
+DarkGray
+14
+ReaderData
+
+
+
+Left
+Lead-Off Screen
 
 Silver
 Buttons, count is next line
-3
-ExecuteLogicButton3
-Mark Part
-97
-97
+2
+CreatUID
+Create UID
+960
+276
 3480
 54
 Black
@@ -855,14 +477,14 @@ Constant
 MarkPartButtonBGColor
 
 
-ExecuteLogicButton1_1
+RecordDefect
 Record Defect
-489
-434
+969
+520
 3480
-30
+54
 Black
-CadetBlue
+LawnGreen
 14
 ExecuteLogic
 
@@ -874,73 +496,51 @@ Constant
 
 
 
-
-
-
-ExecuteLogicButton2
-Print Label
-289
-97
-3480
-54
-Black
-LawnGreen
-14
-ExecuteLogic
-
-PrintLabelButtonLogicChart
-Constant
-
-1
-
-
-
-
-PrintLabelButtonBGColor
+DefectButtonBGColor
 
 
 Labels, count is next line
-20
+19
 Label1
 
-224
-301
+225
+382
 206
-20
+30
 Black
 White
-12
-Scanner Data
-Variable
+14
+
+Constant
 
 
 
 Left
 Label1_1
-Part Serial Number
-47
-301
+Part Type
+48
+382
 155
 20
 SteelBlue
 Silver
-12
-Part Serial Number
+14
+Part Type
 Constant
 
 
 
 Left
-Label6
- 
-18
-25
-884
-35
+Label1_10
+Lead Off Station
+445
+28
+281
+54
 Black
-DimGray
+Transparent
 24
- 
+Lead Off Station
 Constant
 
 
@@ -948,13 +548,13 @@ Constant
 Center
 Label5
 Time/Date of Scan
-479
-301
-164
+509
+389
+189
 20
 SteelBlue
 Silver
-12
+14
 Time/Date of Scan
 Constant
 
@@ -963,28 +563,28 @@ Constant
 Left
 Label4
 
-647
-297
+718
+381
 217
-20
+30
 Black
 White
-12
-TimeStamp
-Variable
+14
+
+Constant
 
 
 
 Left
 Label3
 Select Operator
-48
-214
-146
-20
+49
+280
+161
+30
 Teal
 Silver
-12
+14
 Select Operator
 Constant
 
@@ -992,15 +592,15 @@ Constant
 
 Left
 Label2_1
-Select Part Number
-483
-214
-158
-20
+Select Part Type
+503
+280
+209
+30
 Teal
 Silver
-12
-Select Part Number
+14
+Select Part Type
 Constant
 
 
@@ -1008,13 +608,13 @@ Constant
 Left
 Label3_2
 Production Count (Good)
-45
-537
-228
+41
+623
+250
 20
 SlateGray
 Silver
-12
+14
 Production Count (Good)
 Constant
 
@@ -1023,28 +623,28 @@ Constant
 Left
 Label2_2
 
-295
-536
+357
+615
 180
-20
+30
 Black
 White
-12
-GoodPartCount
-Variable
+14
+
+Constant
 
 
 
 Left
 Label1_3
 -------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-24
-167
-884
-20
+33
+215
+1212
+30
 Teal
 Silver
-14
+16
 -------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Constant
 
@@ -1053,13 +653,13 @@ Constant
 Left
 Label2
 ------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-24
-256
-884
+33
+334
+1200
 20
 SteelBlue
 Silver
-14
+16
 ------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Constant
 
@@ -1068,29 +668,29 @@ Constant
 Left
 Label1_4
 
-224
-346
-206
-20
+226
+430
+286
+30
 Black
 White
-12
-VerifiedScannedPartNumber
-Variable
+14
+
+Constant
 
 
 
 Left
 Label2_3
-Part Number Verified
-47
-346
+UID Created
+48
+427
 156
 20
 SteelBlue
 Silver
-12
-Part Number Verified
+14
+UID Created
 Constant
 
 
@@ -1098,13 +698,13 @@ Constant
 Left
 Label1_6
 Defects
-46
-438
+47
+519
 95
 17
 DarkGoldenrod
 Silver
-12
+14
 Defects
 Constant
 
@@ -1113,13 +713,13 @@ Constant
 Left
 Label1_7
 Production Count (Defective)
-44
-570
-232
+51
+666
+280
 20
 SlateGray
 Silver
-12
+14
 Production Count (Defective)
 Constant
 
@@ -1128,29 +728,14 @@ Constant
 Left
 Label2_5
 
-297
-571
+358
+656
 180
-20
+30
 Black
 White
-12
-BadPartCount
-Variable
+14
 
-
-
-Left
-Label1_2
-powered by
-47
-625
-81
-20
-SteelBlue
-Silver
-8
-powered by
 Constant
 
 
@@ -1158,13 +743,13 @@ Constant
 Left
 Label1_5
 ------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-24
-391
-884
+25
+472
+1200
 20
 DarkGoldenrod
 Silver
-14
+16
 ------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Constant
 
@@ -1173,13 +758,13 @@ Constant
 Left
 Label1_8
 ------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-24
-500
-884
+25
+581
+1200
 20
 SlateGray
 Silver
-14
+16
 ------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Constant
 
@@ -1188,15 +773,15 @@ Constant
 Left
 Label1_9
 
-15
-21
-884
-35
+30
+105
+1200
+87
 Black
 Aquamarine
 24
-Status
-Variable
+
+Constant
 
 
 
@@ -1207,10 +792,10 @@ Images, count is next line
 2
 Image1
 
-938
-11
-156
-151
+1075
+589
+137
+145
 C:\PlantWatchConfig\Images\track-pak logo transparent 30% .png
 Constant
 
@@ -1232,8 +817,8 @@ Constant
 No
 Image2
 
-130
-582
+919
+636
 144
 62
 C:\PlantWatchConfig\Images\PlantWatch Logo_vectorformat_031111_transparent 138 by 38.png
@@ -1259,45 +844,45 @@ Listboxes, count is next line
 0
 Dropdowns, count is next line
 3
-DropDown1
+PartType
 
-647
-209
+725
+287
 4340
-27
+30
 WindowText
 ControlLightLight
-12
+14
 PartNumberArray
-5
-SekectedPartNumber
+2
+SelectedPartNumber
 
 
 
-DropDown2
+Operator
 
-222
-208
+223
+280
 4300
-27
+30
 WindowText
 Window
-12
+14
 OperatorArray
-3
+10
 SelectedOperator
 
 
 
-DropDown2_1
+DefectType
 
-148
-434
-6140
-27
+213
+518
+9400
+30
 WindowText
 ControlLightLight
-12
+14
 DefectArray
 5
 SelectedDefect
@@ -1305,4 +890,449 @@ SelectedDefect
 
 
 WebPages, count is next line
+0
+OutputTexts, count is next line
+0
+Pack out
+
+Silver
+Buttons, count is next line
+2
+ExecuteLogicButton31
+Record Defect
+960
+510
+3480
+54
+Black
+LawnGreen
+14
+ExecuteLogic
+
+RecordDefectButtonLogicChart
+Constant
+
+1
+
+
+
+
+DefectButtonBGColor
+
+
+PrintLbl
+Print Label
+960
+264
+3480
+54
+Black
+LawnGreen
+14
+ExecuteLogic
+
+MarkPartButtonLogicChart
+Constant
+
+1
+
+
+
+
+MarkPartButtonBGColor
+
+
+Labels, count is next line
+20
+Label59
+Part Status
+541
+429
+155
+20
+SteelBlue
+Silver
+14
+Part Status
+Constant
+
+
+
+Left
+Label53
+
+28
+98
+1200
+87
+Black
+Aquamarine
+24
+
+Constant
+
+
+
+Left
+Label52
+------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+23
+574
+1200
+20
+SlateGray
+Silver
+16
+------------------Production-Counts--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label51
+------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+23
+465
+1200
+33
+DarkGoldenrod
+Silver
+16
+------------------Report-Defect--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label49
+
+356
+649
+180
+30
+Black
+White
+14
+
+Constant
+
+
+
+Left
+Label48
+Production Count (Defective)
+49
+659
+280
+20
+SlateGray
+Silver
+14
+Production Count (Defective)
+Constant
+
+
+
+Left
+Label47
+Defects
+45
+512
+95
+17
+DarkGoldenrod
+Silver
+14
+Defects
+Constant
+
+
+
+Left
+Label46
+UID
+46
+420
+156
+20
+SteelBlue
+Silver
+14
+UID
+Constant
+
+
+
+Left
+Label45
+
+224
+423
+286
+30
+Black
+White
+14
+
+Constant
+
+
+
+Left
+Label44
+------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+31
+327
+1200
+20
+SteelBlue
+Silver
+16
+------------------Current-Part--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label43
+-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+31
+208
+1212
+30
+Teal
+Silver
+16
+-------------------Setup------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constant
+
+
+
+Left
+Label42
+
+355
+608
+180
+30
+Black
+White
+14
+
+Constant
+
+
+
+Left
+Label41
+Production Count (Good)
+39
+616
+250
+20
+SlateGray
+Silver
+14
+Production Count (Good)
+Constant
+
+
+
+Left
+Label60
+
+716
+423
+217
+30
+Black
+White
+14
+
+Constant
+
+
+
+Left
+Label39
+Select Operator
+47
+273
+161
+30
+Teal
+Silver
+14
+Select Operator
+Constant
+
+
+
+Left
+Label38
+
+716
+374
+217
+30
+Black
+White
+14
+
+Constant
+
+
+
+Left
+Label37
+Time/Date of Scan
+507
+382
+189
+20
+SteelBlue
+Silver
+14
+Time/Date of Scan
+Constant
+
+
+
+Left
+Label36
+Pack-Out Station
+35
+18
+1207
+54
+Black
+Transparent
+24
+Pack-Out Station
+Constant
+
+
+
+Left
+Label35
+Part Type
+46
+375
+155
+20
+SteelBlue
+Silver
+14
+Part Type
+Constant
+
+
+
+Left
+Label34
+
+223
+375
+206
+30
+Black
+White
+14
+
+Constant
+
+
+
+Left
+Inputs, count is next line
+0
+Images, count is next line
+2
+Image55
+
+917
+629
+144
+62
+C:\PlantWatchConfig\Images\PlantWatch Logo_vectorformat_031111_transparent 138 by 38.png
+Constant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No
+Image54
+
+1073
+582
+137
+145
+C:\PlantWatchConfig\Images\track-pak logo transparent 30% .png
+Constant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No
+Listboxes, count is next line
+0
+Dropdowns, count is next line
+2
+Defect
+
+211
+511
+9400
+30
+WindowText
+ControlLightLight
+14
+DefectArray
+5
+SelectedDefect
+
+
+
+Operator
+
+222
+267
+6060
+30
+WindowText
+Window
+14
+
+1
+
+
+
+
+WebPages, count is next line
+0
+OutputTexts, count is next line
 0

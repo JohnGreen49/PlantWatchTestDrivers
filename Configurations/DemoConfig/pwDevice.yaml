@@ -27,16 +27,6 @@
   description: Serial Handheld Scanner Port
   deviceType: COMPort
   disabled: false
-- intervalSeconds: 1
-  name: LeadoffInitialization
-  description: Interval Timer Initializatiion
-  deviceType: Interval
-  disabled: false
-- associatedVariable: PlaceHolder
-  triggerOnChangeToZero: true
-  name: MarkPartButton
-  deviceType: Variable
-  disabled: false
 - portID: ' 1'
   baudRate: 9600
   dataBits: 8
@@ -47,46 +37,9 @@
   searchMethodPrefixUsed: false
   searchMethodSuffixUsed: false
   portString: 9600,n,8,1
-  name: Pack Out Hand Scanner
+  name: Packout Hand Scanner
   description: Serial Handheld Scanner Port
   deviceType: COMPort
-  disabled: false
-- associatedVariable: PlaceHolder
-  triggerOnChangeToZero: true
-  name: RecordDefectButton
-  deviceType: Variable
-  disabled: false
-- associatedVariable: PlaceHolder
-  triggerOnChangeToZero: true
-  name: RecordFailingStatusButton
-  deviceType: Variable
-  station: ABCStation
-  disabled: false
-- associatedVariable: PlaceHolder
-  triggerOnChangeToZero: true
-  name: RecordPassingStatusButton
-  deviceType: Variable
-  disabled: false
-- associatedVariable: SelectedDefect
-  triggerOnChangeToZero: false
-  name: SelectedDefectTriggerLogic
-  deviceType: Variable
-  station: ABCStation
-  disabled: false
-- associatedVariable: SelectedOperator
-  triggerOnChangeToZero: false
-  name: SelectedOperatorTriggerVariable
-  deviceType: Variable
-  disabled: false
-- associatedVariable: SelectedPartNumber
-  triggerOnChangeToZero: false
-  name: SelectedPartNumberTriggerVariable
-  deviceType: Variable
-  disabled: false
-- associatedVariable: PlaceHolder
-  triggerOnChangeToZero: false
-  name: TriggerInspectionButton
-  deviceType: Variable
   disabled: false
 - intervalSeconds: 15
   name: UITimedMsg

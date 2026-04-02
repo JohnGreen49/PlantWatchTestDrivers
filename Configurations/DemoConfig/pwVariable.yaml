@@ -44,6 +44,12 @@
   isArray: false
   dataType: String
   variableType: Local
+- variableType: Constant
+  name: GREATER_THAN
+  description: 'Constant: >'
+  isArray: false
+  dataType: String
+  defaultValue: '>'
 - name: Garbage
   description: Garbage variable
   isArray: false
@@ -61,6 +67,18 @@
   isArray: false
   dataType: String
   variableType: Local
+- variableType: Constant
+  name: LESS_THAN
+  description: 'Constant: <'
+  isArray: false
+  dataType: String
+  defaultValue: <
+- variableType: Constant
+  name: MARKFILE_FOLDER
+  description: 'Constant: C:\PlantWatchData'
+  isArray: false
+  dataType: String
+  defaultValue: C:\PlantWatchData
 - name: MarkDataString
   isArray: false
   dataType: String
@@ -81,6 +99,12 @@
   isArray: false
   dataType: String
   variableType: Local
+- variableType: Constant
+  name: ONE
+  description: 'Constant: 1'
+  isArray: false
+  dataType: String
+  defaultValue: 1
 - name: OperatorArray
   isArray: true
   dataType: String
